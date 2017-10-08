@@ -1,0 +1,43 @@
+---
+# name of person or company
+name: John Doe
+
+# is company team or single person? (required)
+# use `true` for company teams, `false` or empty for single person
+is_company:
+
+# description (optional)
+description: "Hey, this is John. Good to see y’all!"
+
+# image/avatar or company logo (optional)
+# use file from current folder
+image_file: balvenie.jpg
+
+# website (optional)
+website_url: https://johndoe.tld
+
+# locations (one required)
+locations:
+-
+  # geo position (required!)
+  latitude: 54.2
+  longitude: 13.6
+
+  # address (optional)
+  address_line_1: 1543 Somewhere road 3
+  address_line_2: Boston
+  address_line_3: USA
+
+  # name of contact person (optional, use for company teams only)
+  contact_person:
+
+  # email (optional)
+  # split up in 2 parts to protect from spam!
+  # email_local: part before @, e. g. "john.doe"
+  # email_domain: part after @, e. g. "gmail.com"
+  email_local: john.doe
+  email_domain: gmail.com
+
+  # phone (optional)
+  phone: +41 235 871234
+---

@@ -1,0 +1,66 @@
+---
+# name of person or company
+name:
+
+# is company team or single person? (required)
+# use `true` for company teams, `false` or empty for single person
+is_company:
+
+# description (optional)
+description:
+
+# image/avatar or company logo (optional)
+# use file from current folder
+image_file:
+
+# website (optional)
+website_url:
+
+# locations (one required)
+locations:
+-
+  # geo position (required!)
+  latitude:
+  longitude:
+
+  # address (optional)
+  address_line_1:
+  address_line_2:
+  address_line_3:
+
+  # name of contact person (optional, use for company teams only)
+  contact_person:
+
+  # email (optional)
+  # split up in 2 parts to protect from spam!
+  # email_local: part before @, e. g. "john.doe"
+  # email_domain: part after @, e. g. "gmail.com"
+  email_local:
+  email_domain:
+
+  # phone (optional)
+  phone:
+
+-
+  # geo position (required!)
+  latitude:
+  longitude:
+
+  # address (optional)
+  address_line_1:
+  address_line_2:
+  address_line_3:
+
+  # name of contact person (optional, use for company teams only)
+  contact_person:
+
+  # email (optional)
+  # split up in 2 parts to protect from spam!
+  # email_local: part before @, e. g. "john.doe"
+  # email_domain: part after @, e. g. "gmail.com"
+  email_local:
+  email_domain:
+
+  # phone (optional)
+  phone:
+---

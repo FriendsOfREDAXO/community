@@ -1,43 +1,26 @@
 ---
-# name of person or company
+# name (required)
+# may be your real name or your nick
 name: John Doe
 
-# is company team or single person? (required)
-# use `true` for company teams, `false` or empty for single person
-is_company:
+# geo position (required)
+# provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
+latitude: 50.11
+longitude: 8.67
 
-# description (optional)
-description: "Hey, this is John. Good to see y’all!"
+# bio
+# describe yourself, your motivation in REDAXO or whatever is relevant for you. should be the size of a tweet (140 chars).
+bio: "Hey, I’m John, englishman from Frankfurt am Main working for YAKAMOTO. I was involved into several REDAXO addons like structure 4.0, the wordpress importer and twitteredaxo. Find me at slack and in the forum."
 
-# image/avatar or company logo (optional)
-# use file from current folder
-image_file: balvenie.jpg
+# image/avatar
+# use file from current folder, should be about 300 x 300 px
+image: balvenie.jpg
 
-# website (optional)
-website_url: https://johndoe.tld
+# links
+# one or more links to your website, your github profile, twitter, facebook et al.
+links:
+- https://johndoe.me
+- https://github.com/johndoe
+- https://twitter.com/johndoe
 
-# locations (one required)
-locations:
--
-  # geo position (required!)
-  latitude: 54.2
-  longitude: 13.6
-
-  # address (optional)
-  address_line_1: 1543 Somewhere road 3
-  address_line_2: Boston
-  address_line_3: USA
-
-  # name of contact person (optional, use for company teams only)
-  contact_person:
-
-  # email (optional)
-  # split up in 2 parts to protect from spam!
-  # email_local: part before @, e. g. "john.doe"
-  # email_domain: part after @, e. g. "gmail.com"
-  email_local: john.doe
-  email_domain: gmail.com
-
-  # phone (optional)
-  phone: +41 235 871234
 ---

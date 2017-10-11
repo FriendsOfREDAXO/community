@@ -1,26 +1,23 @@
 ---
 # name (required)
 # may be your real name or your nick
-name: John Doe
+name: webdude
 
 # geo position (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
-latitude: 50.11
-longitude: 8.67
+latitude: 52.222
+longitude: 21.06
 
 # bio
 # describe yourself, your motivation in REDAXO or whatever is relevant for you. should be the size of a tweet (140 chars).
-bio: "Hey, I’m John, englishman from Frankfurt am Main working for YAKAMOTO. I was involved into several REDAXO addons like structure 4.0, the wordpress importer and twitteredaxo. Find me at slack and in the forum."
+bio: ""
 
 # image/avatar
 # use file from current folder, should be about 300 x 300 px
-image: johndoe.jpg
+image: 10-freunde.jpg
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 links:
-- https://johndoe.me
-- https://github.com/johndoe
-- https://twitter.com/johndoe
 
 ---

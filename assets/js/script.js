@@ -17,16 +17,45 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<div class="user">';
 
             if (directory[i].image) {
-                content = content +
+                content += '' +
                     '<div class="user__image">' +
                         '<img class="user__image-src" src="' + directory[i].image + '" alt="">' +
                     '</div>';
             }
 
-            content = content +
-                    '<div class="user__data">' +
-                        '<h2 class="user__title">' + directory[i].name + '</h2>' +
-                        '<p class="user__bio">' + directory[i].bio + '</p>' +
+            content += '' +
+                    '<div class="user__data">';
+
+            if (directory[i].name) {
+                content += '' +
+                        '<h2 class="user__name">' + directory[i].name + '</h2>';
+            }
+
+            if (directory[i].bio) {
+                content += '' +
+                        '<p class="user__bio">' + directory[i].bio + '</p>';
+            }
+
+            if (directory[i].links) {
+                content += '' +
+                        '<div class="user__links">' +
+                            '<ul class="user__links-list">';
+
+                for (var j = 0; j < 4; j++) {
+                    if (directory[i]['links'][j]) {
+                        var link = directory[i]['links'][j];
+                        var linkText = link.replace(/(http:\/\/|https:\/\/)/i, '');
+                        content += '' +
+                                '<li class="user__links-listitem"><a href="' + link + '">' + linkText + '</a></li>';
+                    }
+                }
+
+                content += '' +
+                            '</ul>' +
+                        '</div>';
+            }
+
+            content += '' +
                     '</div>' +
                 '</div>';
 

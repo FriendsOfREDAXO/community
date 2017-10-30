@@ -11,7 +11,7 @@ longitude: 8.67
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
-# should be limited to the size of a tweet (140 chars).
+# should be 300 chars at maximum. no markup!
 bio: "Hey, I’m John, englishman living in Frankfurt am Main working for YAKAMOTO. I was involved into several REDAXO addons like structure 4.0, the wordpress importer and twitteredaxo. Find me at slack and in the forum."
 
 # image or gravatar

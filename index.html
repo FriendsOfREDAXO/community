@@ -1,0 +1,157 @@
+---
+title: REDAXO Community World Map
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+    <link rel="stylesheet" href="{{ "/assets/vendor/leaflet/leaflet.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/vendor/leaflet.markercluster/dist/MarkerCluster.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/vendor/leaflet.markercluster/dist/MarkerCluster.Default.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/icons/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#359ad6">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#394254">
+
+    <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/leaflet.markercluster/dist/leaflet.markercluster.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/leaflet.edgebuffer/src/leaflet.edgebuffer.js' | relative_url }}"></script>
+
+    <!-- inject SEO stuff -->
+    {% seo %}
+</head>
+
+<body>
+
+    <!-- map container -->
+    <div class="map" id="map"></div>
+
+
+    <!-- info banner at bottom on site, click toggles popover -->
+    <a class="infobanner" id="popover-open">
+        <div class="infobanner__redaxo">
+            <img class="infobanner__logo" src="assets/images/redaxo.svg" alt="REDAXO">
+            <span>Community <span class="hide-xs">World</span> Map</span>
+        </div>
+        <div class="infobanner__join">
+            <span class="infobanner__heart">♥</span>
+            <span>Join!</span>
+        </div>
+    </a>
+
+
+    <!-- popover -->
+    <div class="popover" id="popover">
+        <button id="popover-close" class="popover__close" type="button"><span>Close</span><i><i></i></i></button>
+        <div class="popover__body">
+
+            <h1 class="popover__title">
+                <img class="redaxo-logo" src="assets/images/redaxo-cms.svg" alt="REDAXO"><br>
+                Community World Map
+            </h1>
+
+            <p>Any of the <strong>{{ site.directory | size }}</strong> location markers on this map represents someone who’s involved in <a href="https://redaxo.org">REDAXO</a>, which we the community believe is one of the finest CMS around.&nbsp;✌️</p>
+            <p>The project is hosted at <a href="https://github.com/FriendsOfREDAXO/community">GitHub</a>, which allows for everyone to <strong>add and manage their map entries by themselves</strong>! This is pretty cool. If you like to join the map, just follow the link and find all information:</p>
+
+            <div class="calltoaction">
+                👉 <a href="#">Learn how to manage your marker!</a>
+            </div>
+
+            <div class="legals">
+                <p>Legals: This service is provided by the REDAXO community which is represented by <a href="http://www.yakamara.de/#impressum">Yakamara&nbsp;Media</a>.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- load directory data -->
+    {% assign directoryData = site.collections | where: "label", "directory" | first %}
+
+
+    <!-- directory data -->
+    <script>
+    var directory = [
+        {% for entry in site.directory %}
+
+        <!-- name -->
+        {% assign name = entry.name | strip_html | truncate: 100 %}
+
+        <!-- latitude -->
+        {% assign latitude = entry.latitude | strip_html %}
+
+        <!-- longitude -->
+        {% assign longitude = entry.longitude | strip_html %}
+
+        <!-- bio -->
+        {% assign bio = entry.bio | strip_html | truncate: 300 %}
+
+        <!-- image -->
+        {% assign image = entry.image | strip_html %}
+        {% unless image contains 'http://' or image contains 'https://' %}
+
+            <!-- split path into parts and reassemble to get clean path (which jekyll does not provide) -->
+            {% assign parts = entry.id | split: "/" %}
+            {% assign path = "" %}
+            {% for part in parts %}
+                {% if part != "" and forloop.last != true %}
+                    {% capture path %}{{ path }}/{{ part }}{% endcapture %}
+                {% endif %}
+            {% endfor %}
+
+            <!-- set up complete image path -->
+            {% assign imagePath = path | append: "/" | append: image %}
+            {% assign imagePathLength = imagePath | size %}
+
+            <!-- create internal path stored by jeykll and check if image exists -->
+            {% assign checkPath = imagePath | slice: 1, imagePathLength | prepend: "_" %}
+            {% assign imageObject = directoryData.files | where: "path", checkPath | first %}
+
+            <!-- save final image path -->
+            {% if imageObject %}
+                {% assign image = imagePath %}
+            {% else %}
+                {% assign image = "" %}
+            {% endif %}
+        {% endunless %}
+
+        <!-- links -->
+        {% assign links = entry.links | strip_html %}
+
+
+        <!-- output -->
+        {
+            'name': {{ name | jsonify }},
+            'latitude': {{ latitude | jsonify }},
+            'longitude': {{ longitude | jsonify }},
+            'bio': {{ bio | jsonify }},
+            'image': {{ image | jsonify }},
+            'links': {{ links | jsonify }}
+        }{% unless forloop.last == true %},{% endunless %}
+        {% endfor %}
+    ];
+    </script>
+
+
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+
+</body>
+</html>

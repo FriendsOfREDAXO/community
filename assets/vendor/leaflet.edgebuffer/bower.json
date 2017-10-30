@@ -1,0 +1,27 @@
+{
+  "name": "leaflet.edgebuffer",
+  "homepage": "https://github.com/TolonUK/Leaflet.EdgeBuffer",
+  "authors": [
+    "Alex Paterson <alex@tolon.co.uk>"
+  ],
+  "description": "A leaflet plugin for pre-loading map tiles that are outside the current viewport",
+  "main": "src/leaflet.edgebuffer.js",
+  "keywords": [
+    "leaflet",
+    "leafletjs",
+    "map",
+    "gis",
+    "buffer"
+  ],
+  "dependencies": {
+      "leaflet": "https://github.com/Leaflet/Leaflet.git"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

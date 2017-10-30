@@ -3,3 +3,4 @@ Upcoming: Locate the [REDAXO](https://redaxo.org) community on a world map. Anyo
 Current website version: http://redaxo-entwickler.de
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/redaxo-entwickler.github.io/assets/redaxo-entwickler_01.jpg)
+

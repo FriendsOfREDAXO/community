@@ -6,6 +6,11 @@ repository: FriendsOfREDAXO/community
 plugins: ['jekyll-seo-tag']
 timezone: Europe/Berlin
 
+# SEO
+# https://github.com/jekyll/jekyll-seo-tag
+title: REDAXO Community World Map
+description: A map filled with people being involved in REDAXO CMS. Hosted at GitHub, which allows for everyone to add their map entries. Join us!
+
 # Assets
 # https://jekyllrb.com/docs/assets/
 sass:

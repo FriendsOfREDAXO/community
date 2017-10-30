@@ -8,4 +8,4 @@ Your issue relates to another topic? → Please clear this text field and enter 
 * image:
 * links:
 
-See [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/master/_directory/.data.example.yml) for detailed instructions!
+See `_directory/.data.example.yml` for detailed instructions!

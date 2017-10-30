@@ -2,7 +2,7 @@
 
 The project is hosted at GitHub, which allows for everyone to add and manage their map entries by themselves! This is pretty cool.
 
-Learn about 3 ways to manage your entry:
+Learn about 3 ways how to manage your entry:
 
 ## 1. Send a pull request
 
@@ -16,7 +16,7 @@ Second best option: if you’re not familiar with forking and pull request, just
 
 Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you don not feel comfortable to open an issue containing your data, just send it to us. __Email:__ _friendsof [at] redaxo.org_
 
-Btw: which data? 👇
+Btw: what data? 👇
 
 ## Data structure
 

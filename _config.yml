@@ -1,0 +1,33 @@
+# Configuration
+# https://jekyllrb.com/docs/configuration/
+
+theme: minima
+repository: FriendsOfREDAXO/community
+plugins: ['jekyll-seo-tag']
+timezone: Europe/Berlin
+
+# Assets
+# https://jekyllrb.com/docs/assets/
+sass:
+    style: compressed
+
+# Collections
+# https://jekyllrb.com/docs/collections/
+collections:
+- directory
+
+# Exclude directories and/or files from the conversion.
+# https://jekyllrb.com/docs/configuration/
+exclude:
+- CONTRIBUTE.md
+- Gemfile
+- Gemfile.lock
+- LICENSE
+- README.md
+- SETUP.md
+
+# Compress HTML in Jekyll
+# http://jch.penibelst.de
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]

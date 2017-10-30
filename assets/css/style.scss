@@ -1,0 +1,333 @@
+---
+---
+
+@mixin visuallyhidden {
+  // visually hidden, but have it available for screen readers (h5bp.com)
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+@mixin hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+html {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 0.75em 0;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+a {
+  color: #3fb4ff;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+/* map */
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* infobanner */
+
+.infobanner {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+  z-index: 10;
+  display: flex;
+  font-size: 11px;
+  line-height: 0;
+  font-weight: bold;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus {
+    .infobanner__redaxo {
+      background: #59bfff;
+    }
+    .infobanner__join {
+      background: #eaff73;
+    }
+  }
+}
+
+.infobanner__redaxo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #3fb4ff;
+  color: #fff;
+  height: 25px;
+  padding: 0 15px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background 100ms ease-out;
+}
+
+.infobanner__logo {
+  width: auto;
+  height: 15px;
+  margin-right: 7px;
+}
+
+.infobanner__join {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  background: #deff25;
+  color: #266d99;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 15px;
+  transition: background 100ms ease-out;
+}
+
+.infobanner__heart {
+  font-size: 1.5em;
+  margin-right: 3px;
+  transform: translateY(-1px);
+}
+
+/* popover */
+
+.popover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  max-height: 100%;
+  background: #fff;
+  border: 2px solid #deff25;
+  opacity: 0;
+  transform: translate3d(-50%, calc(-50% + 20px), 0);
+  transition: all 200ms ease-out;
+  z-index: -1;
+}
+
+.popover--active {
+  opacity: 1;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 100;
+}
+
+.popover__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  border: 0;
+  outline: 0 !important;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    i {
+      background-color: #deff25;
+    }
+  }
+
+  // cross
+  i {
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #d3f224;
+  }
+  > i {
+    transform: translate(-50%, -50%) rotate(45deg);
+    > i {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  span {
+    @include visuallyhidden;
+  }
+}
+
+.popover__body {
+  flex: 1;
+  padding: 40px;
+  margin: 2px;
+  overflow: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.popover__title {
+  margin-bottom: 30px;
+}
+
+/* leaflet styles */
+
+.leaflet-touch .leaflet-bar {
+  border-color: rgba(#fff, 0.5);
+}
+
+.leaflet-bar a {
+  background-color: #3fb4ff;
+  color: #fff;
+  border-bottom-color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: #87d1ff;
+  }
+}
+
+/* marker cluster styles */
+
+.marker-cluster {
+  color: rgba(#fff, 0.8);
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: rgba(#87d1ff, 0.6);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: rgba(#3fb4ff, 0.6);
+}
+
+/* leaflet popup content styles */
+
+.leaflet-popup-content p {
+  margin: 0 0 0.75em 0;
+}
+
+/* user profile */
+
+.user {
+  display: flex;
+}
+
+.user__image {
+  flex: 1;
+  width: 120px;
+}
+
+.user__image-src {
+  display: block;
+  max-width: 100px;
+  max-height: 200px;
+  border-radius: 8px;
+}
+
+.user__data {
+  width: 200px;
+}
+
+.user__title {
+  @include hyphenate;
+}
+
+.user__bio {
+  @include hyphenate;
+}
+
+@media (max-width: 320px) {
+
+  .user__image {
+    width: 90px;
+  }
+
+  .user__image-src {
+    max-width: 75px;
+    max-height: 150px;
+  }
+
+  .user__data {
+    width: 180px;
+  }
+}
+
+/* diverse */
+
+.calltoaction {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.legals {
+  margin: 40px 0 -30px 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  color: #999;
+}
+
+.redaxo-logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 320px) {
+  .hide-xs {
+    @include visuallyhidden;
+  }
+}

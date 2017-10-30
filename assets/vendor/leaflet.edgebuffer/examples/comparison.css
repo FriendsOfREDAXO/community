@@ -1,0 +1,22 @@
+.map
+{
+    height:300px;
+    width: 100%;
+
+    display: block;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+.fill
+{
+    height: 100%;
+}
+
+.panel-map
+{
+    min-height: 200px;
+}

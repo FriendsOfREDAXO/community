@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaflet.EdgeBuffer Example</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        
+        <link rel="stylesheet" href="./comparison.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- Include Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+        <!-- Include the edgebuffer plugin -->
+        <script src="./../src/leaflet.edgebuffer.js"></script>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div class="page-header">
+          <h1>Leaflet.EdgeBuffer<br /><small>A Leaflet plugin for preloading tiles beyond the edge of the visible map</small></h1>
+        </div>
+        
+        <h2>Demo</h2>
+        <p>
+        Pan the two maps below and observe that the blank background underneath the tiles is less likely to be seen when using the EdgeBuffer plugin.
+        </p>
+        
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Without EdgeBuffer</h3>
+          </div>
+          <div class="panel-body panel-map">
+            <div id="mapWithout" class="map"></div>
+          </div>
+        </div>
+        
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Standard EdgeBuffer Usage (1 Tile)</h3>
+          </div>
+          <div class="panel-body panel-map">
+            <div id="mapWith1" class="map"></div>
+          </div>
+        </div>
+        
+        <h2>Usage</h2>
+      
+        <div class="panel panel-default">
+          <div class="panel-body panel-map">
+            <p>Add the script to your document. E.g.</p>
+            <pre>&lt;script src="./leaflet.edgebuffer.js"&gt;&lt;/script&gt;</pre>
+            <p>Add the edgeBufferTiles property to your tiled map layers (or any L.GridLayer-based layer). The value is the minimum number of tiles to load outside of the visible area. Fractional values are permitted. E.g.</p>
+            <pre>var openStreetMap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  edgeBufferTiles: 1
+})</pre>
+          </div>
+        </div>
+        
+        <p>See <a href="https://github.com/TolonUK/Leaflet.EdgeBuffer">https://github.com/TolonUK/Leaflet.EdgeBuffer</a> for the code and to download.</p>
+      
+      </div>
+
+        <script>
+                var openStreetMapWith1 = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                    edgeBufferTiles: 1
+                }),
+
+                mapWith1 = new L.Map('mapWith1', {
+                    layers: [openStreetMapWith1],
+                    center: new L.LatLng(54.535151,-1.058028),
+                    zoom: 13,
+                });
+                
+                var openStreetMapWithout = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                    edgeBufferTiles: 0
+                }),
+
+                mapWithout = new L.Map('mapWithout', {
+                    layers: [openStreetMapWithout],
+                    center: new L.LatLng(54.535151,-1.058028),
+                    zoom: 13,
+                });
+        </script>
+    </body>
+</html>

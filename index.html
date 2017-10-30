@@ -117,15 +117,14 @@ layout: compress
                 {% endif %}
             {% endfor %}
 
-            <!-- set up complete image path -->
-            {% assign imagePath = path | append: "/" | append: image %}
-            {% assign imagePathLength = imagePath | size %}
+            <!-- set up complete image path (without leading '/') -->
+            {% assign imagePath = path | slice: 1, 99999 | append: "/" | append: image %}
 
             <!-- create internal path stored by jeykll and check if image exists -->
-            {% assign checkPath = imagePath | slice: 1, imagePathLength | prepend: "_" %}
+            {% assign checkPath = imagePath | prepend: "_" %}
             {% assign imageObject = directoryData.files | where: "path", checkPath | first %}
 
-            <!-- save final image path -->
+            <!-- assign final image path -->
             {% if imageObject %}
                 {% assign image = imagePath %}
             {% else %}

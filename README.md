@@ -1,6 +1,6 @@
-Upcoming: Locate the [REDAXO](https://redaxo.org) community on a world map. Anyone involved in REDAXO will be able to add their location. All data will be maintained on GitHub.
+# REDAXO Community World Map
 
-Current website version: http://redaxo-entwickler.de
+A map filled with people being involved in [REDAXO](https://redaxo.org) CMS. Hosted at GitHub, which allows for everyone to add their map entries. Join us!
 
-![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/redaxo-entwickler.github.io/assets/redaxo-entwickler_01.jpg)
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/community/assets/community_01.jpg)
 

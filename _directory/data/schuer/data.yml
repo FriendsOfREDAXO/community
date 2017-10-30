@@ -6,8 +6,8 @@ name: Schuer
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 52.5223800
-longitude: 13.3845600
+latitude: 52.5223196
+longitude: 13.3846351
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.

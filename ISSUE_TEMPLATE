@@ -1,0 +1,11 @@
+Add or update your maps entry? → Please fill out the required fields below.
+Your issue relates to another topic? → Please clear this text field and enter your text.
+
+* name:
+* latitude:
+* longitude:
+* bio:
+* image:
+* links:
+
+See [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/master/_directory/.data.example.yml) for detailed instructions!

@@ -14,7 +14,7 @@ Second best option: if you’re not familiar with forking and pull request, just
 
 ## 3. Contact us
 
-Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you don not feel comfortable to open an issue containing your data, just send it to us. __Email:__ _friendsof [at] redaxo.org_
+Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you do not feel comfortable to open an issue containing your data, just send it to us. __Email:__ _friendsof [at] redaxo.org_
 
 Btw: what data? 👇
 

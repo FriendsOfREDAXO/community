@@ -93,16 +93,16 @@ layout: compress
         {% for entry in site.directory %}
 
         <!-- name -->
-        {% assign name = entry.name | strip_html | truncate: 100 %}
+        {% assign name = entry.name | strip_html | truncate: 100 | escape_once %}
 
         <!-- latitude -->
-        {% assign latitude = entry.latitude | strip_html %}
+        {% assign latitude = entry.latitude | strip_html | escape_once %}
 
         <!-- longitude -->
-        {% assign longitude = entry.longitude | strip_html %}
+        {% assign longitude = entry.longitude | strip_html | escape_once %}
 
         <!-- bio -->
-        {% assign bio = entry.bio | strip_html | truncate: 300 %}
+        {% assign bio = entry.bio | strip_html | truncate: 300 | escape_once %}
 
         <!-- image -->
         {% assign image = entry.image | strip_html %}
@@ -134,8 +134,7 @@ layout: compress
         {% endunless %}
 
         <!-- links -->
-        {% assign links = entry.links | strip_html %}
-
+        {% assign links = entry.links | jsonify | escape_once | replace: "&quot;", '"' %}
 
         <!-- output -->
         {
@@ -144,7 +143,7 @@ layout: compress
             'longitude': {{ longitude | jsonify }},
             'bio': {{ bio | jsonify }},
             'image': {{ image | jsonify }},
-            'links': {{ links | jsonify }}
+            'links': {{ links }}
         }{% unless forloop.last == true %},{% endunless %}
         {% endfor %}
     ];

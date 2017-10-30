@@ -279,12 +279,27 @@ a {
   width: 200px;
 }
 
-.user__title {
+.user__name {
   @include hyphenate;
 }
 
 .user__bio {
   @include hyphenate;
+}
+
+.user__links {
+}
+
+.user__links-list {
+  padding: 0;
+  list-style: none;
+}
+
+.user__links-listitem {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 320px) {

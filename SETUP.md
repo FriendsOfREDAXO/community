@@ -43,6 +43,6 @@ To set up the website on your local machine, the following steps are required:
 
     The easiest way to use the token is to use it when starting Jekyll:
 
-        $ JEKYLL_GITHUB_TOKEN=DEIN_TOKEN bundle exec jekyll serve
+        $ JEKYLL_GITHUB_TOKEN=YOUR_TOKEN bundle exec jekyll serve
 
 * Here you can find a documentation at GitHub about how to use Jekyll locally: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/

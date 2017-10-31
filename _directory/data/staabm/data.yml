@@ -23,7 +23,8 @@ image: https://www.gravatar.com/avatar/1e388d462803e83eac1920d924e92054?s=200
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-- https://github.com/staabm
 - https://redaxo.org
+- https://github.com/staabm
+- https://twitter.com/markusstaab
 
 ---

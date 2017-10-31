@@ -12,19 +12,18 @@ longitude: 9.14
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hey, I’m John, englishman living in Frankfurt am Main working for YAKAMOTO. I was involved into several REDAXO addons like structure 4.0, the wordpress importer and twitteredaxo. Find me at slack and in the forum."
+bio: "Hi, I am using REDAXO since version 2.3 and we work for our clients from Aschaffenburg."
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: johndoe.jpg
+#image: johndoe.jpg
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-- https://johndoe.me
-- https://github.com/johndoe
-- https://twitter.com/johndoe
+- http://goldfischclub.de
+- https://twitter.com/frahil
 
 ---

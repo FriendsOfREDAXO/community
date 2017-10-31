@@ -194,6 +194,7 @@ a {
 
 .popover__close {
   position: absolute;
+  z-index: 10;
   top: 10px;
   right: 10px;
   display: block;
@@ -246,6 +247,7 @@ a {
   margin: 2px;
   overflow: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   text-align: center;
 }
 

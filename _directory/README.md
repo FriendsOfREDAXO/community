@@ -22,3 +22,6 @@ Btw: what data? 👇
 
 Have a look at the example file [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/master/_directory/.data.example.yml). Aside from dummy data it contains a lot of __helpful comments__ on how to structure your data!
 
+For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your name so that you can find it later. Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com).  
+
+If you're not sure, take a look at existing user folders to see how to do it. And no worries, the data is always save, you cannot do anything wrong! 

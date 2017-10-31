@@ -52,10 +52,13 @@ h2 {
 a {
   color: #3fb4ff;
   text-decoration: none;
+  -webkit-transition: color 100ms ease-out;
+  -o-transition: color 100ms ease-out;
+  transition: color 100ms ease-out;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
+    color: #80ceff;
   }
 }
 
@@ -205,7 +208,7 @@ a {
   &:hover,
   &:focus {
     i {
-      background-color: #deff25;
+      background-color: #80ceff;
     }
   }
 
@@ -217,7 +220,7 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    background: #d3f224;
+    background: #3fb4ff;
   }
   > i {
     -webkit-transform: translate(-50%, -50%) rotate(45deg);

@@ -15,7 +15,7 @@ longitude: 8.67
 bio: "Hey, I’m John, englishman living in Frankfurt am Main working for YAKAMOTO. I was involved into several REDAXO addons like structure 4.0, the wordpress importer and twitteredaxo. Find me at slack and in the forum."
 
 # image or gravatar
-# provide image file from current folder (like 'johndoe.jpg') or gravatar url (like 'https://www.gravatar.com/avatar/{HASH}')
+# provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
 image: johndoe.jpg
 

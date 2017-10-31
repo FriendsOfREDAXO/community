@@ -12,7 +12,7 @@ longitude: 7.254550
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hello, I am an active Friends Of REDAXO member and working on my leaded FOR AddOns in my freetime. I’m involved in REDAXO since version 3."
+bio: "Hi, I'm an active member of Friends Of REDAXO and I'm working on FOR addOns in my spare time, especially the popular MForm and MBlock. I am REDAXO user since version 3."
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (like 'https://www.gravatar.com/avatar/{HASH}')

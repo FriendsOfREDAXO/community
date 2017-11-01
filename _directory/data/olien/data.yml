@@ -12,12 +12,12 @@ longitude: 7.190
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: “Hey, ich bin Oliver (Olien) und arbeite seit 2006 mit REDAXO und es macht mir immer noch jeden Tag mehr Spaß! Ausserdem kümmere sorge ich für den Eierklikör an den REDAXO Tagen :-))”
+bio: "Hey, ich bin Oliver (Olien) und arbeite seit 2006 mit REDAXO und es macht mir immer noch jeden Tag mehr Spaß! Ausserdem kümmere sorge ich für den Eierklikör an den REDAXO Tagen :-))"
 
 # image or gravatar
 # provide image file from current folder (like ‘johndoe.jpg’) or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-
+image:
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.

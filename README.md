@@ -10,6 +10,10 @@ A map filled with people being involved in [REDAXO](https://redaxo.org) CMS. Hos
 
 You can add your marker to the map and manage your data by yourself. Learn about [3 ways how to manage your entry](https://github.com/FriendsOfREDAXO/community/tree/master/_directory)! 🚀
 
+## Who’s the map for?
+
+The map is for any person being involved in REDAXO: developers, users, editors, writers, designers, friends and family et al. It’s about visualizing the REDAXO community. If you use or support REDAXO, the map is for you! _(See discussion in #26)_
+
 ## How does this map work?
 
 No big deal: GitHub allows to generate static websites out of repositories. They make use of [Jekyll](https://jekyllrb.com), a ruby based generator. Jekyll comes with [Liquid](https://shopify.github.io/liquid/) templates, which helped us to inject all our map entries within a JSON at the bottom of the HTML. JavaScript grabs the data and starts a nice [Leaflet](http://leafletjs.com) map with beautiful tiles provided by [CARTO](https://carto.com/location-data-services/basemaps/).  

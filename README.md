@@ -4,7 +4,7 @@ A map filled with people being involved in [REDAXO](https://redaxo.org) CMS. Hos
 
 👉 __https://friendsofredaxo.github.io/community/__
 
-![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/community/assets/community_01.jpg)
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/community/assets/community_02.png)
 
 ## How to add and manage your entry?
 

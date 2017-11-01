@@ -12,7 +12,7 @@ You can add your marker to the map and manage your data by yourself. Learn about
 
 ## Who’s the map for?
 
-The map is for any person being involved in REDAXO: developers, users, editors, writers, designers, friends and family et al. It’s about visualizing the REDAXO community. If you use or support REDAXO, the map is for you! _(See discussion in #26)_
+The map is for any person being involved in REDAXO: developers, users, editors, writers, designers, friends and family et al. It’s about visualizing the REDAXO community. If you use or support REDAXO, the map is for you!
 
 ## How does this map work?
 

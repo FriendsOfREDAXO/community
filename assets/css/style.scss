@@ -26,7 +26,7 @@
 
 html {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 body {
@@ -292,6 +292,10 @@ a {
 
 /* leaflet popup content styles */
 
+.leaflet-popup-content {
+  margin-bottom: 3px;
+}
+
 .leaflet-popup-content p {
   margin: 0 0 0.75em 0;
 }
@@ -308,7 +312,7 @@ a {
   -webkit-box-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  width: 120px;
+  width: 115px;
 }
 
 .user__image-src {
@@ -366,6 +370,7 @@ a {
 .calltoaction {
   margin: 20px 0;
   font-weight: bold;
+  line-height: 1.25;
 }
 
 .legals {

@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (directory.length > 0) {
 
         var markers = L.markerClusterGroup({
-            showCoverageOnHover: false
+            showCoverageOnHover: false,
+            maxClusterRadius: 40
         });
 
         for (var i = 0, max = directory.length; i < max; i++) {

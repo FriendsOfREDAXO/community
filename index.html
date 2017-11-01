@@ -90,16 +90,16 @@ layout: compress
         {% for entry in site.directory %}
 
         <!-- name -->
-        {% assign name = entry.name | strip_html | truncate: 100 | escape_once %}
+        {% assign name = entry.name | strip_html | truncate: 100 | escape_once | jsonify %}
 
         <!-- latitude -->
-        {% assign latitude = entry.latitude | strip_html | escape_once %}
+        {% assign latitude = entry.latitude | strip_html | escape_once | jsonify %}
 
         <!-- longitude -->
-        {% assign longitude = entry.longitude | strip_html | escape_once %}
+        {% assign longitude = entry.longitude | strip_html | escape_once | jsonify %}
 
         <!-- bio -->
-        {% assign bio = entry.bio | strip_html | truncate: 300 | escape_once %}
+        {% assign bio = entry.bio | strip_html | truncate: 300 | escape_once | jsonify %}
 
         <!-- image -->
         {% assign image = entry.image | strip_html %}
@@ -128,17 +128,18 @@ layout: compress
                 {% assign image = "" %}
             {% endif %}
         {% endunless %}
+        {% assign image = image | jsonify %}
 
         <!-- links -->
         {% assign links = entry.links | jsonify | escape_once | replace: "&quot;", '"' %}
 
         <!-- output -->
         {
-            'name': {{ name | jsonify }},
-            'latitude': {{ latitude | jsonify }},
-            'longitude': {{ longitude | jsonify }},
-            'bio': {{ bio | jsonify }},
-            'image': {{ image | jsonify }},
+            'name': {{ name }},
+            'latitude': {{ latitude }},
+            'longitude': {{ longitude }},
+            'bio': {{ bio }},
+            'image': {{ image }},
             'links': {{ links }}
         }{% unless forloop.last == true %},{% endunless %}
         {% endfor %}

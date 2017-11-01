@@ -13,19 +13,19 @@ layout: compress
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-    <link rel="stylesheet" href="{{ "/assets/vendor/leaflet/leaflet.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/vendor/leaflet.markercluster/dist/MarkerCluster.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/vendor/leaflet.markercluster/dist/MarkerCluster.Default.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet.markercluster/dist/MarkerCluster.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet.markercluster/dist/MarkerCluster.Default.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="manifest" href="icons/manifest.json">
-    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/icons/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/icons/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/icons/favicon-16x16.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/icons/manifest.json' | relative_url }}">
+    <link rel="mask-icon" href="{{ '/icons/safari-pinned-tab.svg' | relative_url }}" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
     <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
@@ -45,7 +45,7 @@ layout: compress
     <!-- info banner at bottom on site, click toggles popover -->
     <a class="infobanner" id="popover-open">
         <div class="infobanner__redaxo">
-            <img class="infobanner__logo" src="assets/images/redaxo.svg" alt="REDAXO">
+            <img class="infobanner__logo" src="{{ '/assets/images/redaxo.svg' | relative_url }}" alt="REDAXO">
             <span>Community <span class="hide-xs">World</span> Map</span>
         </div>
         <div class="infobanner__join">
@@ -61,7 +61,7 @@ layout: compress
         <div class="popover__body">
 
             <h1 class="popover__title">
-                <img class="redaxo-logo" src="assets/images/redaxo-cms.svg" alt="REDAXO"><br>
+                <img class="redaxo-logo" src="{{ '/assets/images/redaxo-cms.svg' | relative_url }}" alt="REDAXO"><br>
                 Community World Map
             </h1>
 

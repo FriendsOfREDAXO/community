@@ -10,7 +10,7 @@ __This is the best option:__ fork the repo, add or update your entry and send a 
 
 ## 2. Open an issue
 
-Second best option: if you’re not familiar with forking and pull request, just open a [GitHub issue](https://github.com/FriendsOfREDAXO/community/issues) with your data inside. We’ll take care and add your data to the map.
+Second best option: if you’re not familiar with forking and pull requests, just open a [GitHub issue](https://github.com/FriendsOfREDAXO/community/issues) with your data inside. We’ll take care and add your data to the map.
 
 ## 3. Contact us
 
@@ -25,3 +25,7 @@ Have a look at the example file [`.data.example.yml`](https://github.com/Friends
 For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your name so that you can find it later. Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com).  
 
 If you're not sure, take a look at existing user folders to see how to do it. And no worries, the data is always save, you cannot do anything wrong! 
+
+## What data should I provide?
+
+The map requires your name or nickname and your geo position. Everything else is optional. Of course we'd all love to read more about you and maybe see your picture! But it’s completely up to you whether to provide it or not!

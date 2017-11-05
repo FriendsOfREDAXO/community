@@ -293,7 +293,7 @@ a {
 /* leaflet popup content styles */
 
 .leaflet-popup-content {
-  margin-bottom: 3px;
+  margin: 13px 13px 3px 13px;
 }
 
 .leaflet-popup-content p {
@@ -320,6 +320,7 @@ a {
   max-width: 100px;
   max-height: 200px;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .user__data {
@@ -328,6 +329,7 @@ a {
 
 .user__name {
   @include hyphenate;
+  padding-right: 10px; // leave room for closing X
 }
 
 .user__bio {

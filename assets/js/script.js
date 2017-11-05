@@ -90,7 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // generate map
     var map = L.map('map', {
-        layers: [tiles, markers]
+        layers: [tiles, markers],
+        minZoom: 2
     });
 
     // fit bounds to map

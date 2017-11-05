@@ -117,4 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
             popover.classList.remove('popover--active');
         }
     });
+
+    // show popover on first visit
+    if (!localStorage.getItem('isReturningVisitor')) {
+        localStorage.setItem('isReturningVisitor', true);
+        popover.classList.add('popover--active');
+    }
 });

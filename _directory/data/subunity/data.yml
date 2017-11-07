@@ -17,12 +17,13 @@ bio: "I’m design lead for Yakamara and take care of all REDAXO corporate topic
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: http://www.yakamara.de/index.php?rex_img_type=col3&rex_img_file=ralph-zumkeller-yakamara.jpg
+image: https://avatars0.githubusercontent.com/u/4094576?s=460&v=4
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
+- https://github.com/subunity
 - http://www.yakamara.de
 
 ---

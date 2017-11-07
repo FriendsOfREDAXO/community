@@ -6,8 +6,8 @@ name: idowapro - Die Internetstrategen
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 48.537056
-longitude: 12.151784
+latitude: 48.5370573
+longitude: 12.1509751
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.

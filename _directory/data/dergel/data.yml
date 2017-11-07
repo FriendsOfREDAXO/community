@@ -12,7 +12,7 @@ longitude: 8.66766628
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "I invented REDAXO :) Except for the core I’m mostly into Y addOns these days, especially YFrom and YCom."
+bio: "I invented REDAXO :) Except for the core I’m mostly into Y addOns these days, especially YForm and YCom."
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)

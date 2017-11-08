@@ -18,7 +18,7 @@ bio: "Hallo, ich bin Tobias Gerlach, freier Webdesigner und arbeite seit 2006 mi
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: tobi.jpg
+image: https://avatars3.githubusercontent.com/u/8439554?s=400&u=52260ea1f4099f308f978ff805f88b147609626c&v=4
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.

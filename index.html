@@ -89,6 +89,12 @@ layout: compress
     var directory = [
         {% for entry in site.directory %}
 
+        <!-- id -->
+        <!-- split path to user folder and select id from second to last part -->
+        {% assign parts = entry.id | split: "/" %}
+        {% assign index = parts | size | minus: 2 %}
+        {% assign id = parts[index] | slugify | jsonify %}
+
         <!-- name -->
         {% assign name = entry.name | strip_html | truncate: 100 | escape_once | jsonify %}
 
@@ -135,6 +141,7 @@ layout: compress
 
         <!-- output -->
         {
+            'id': {{ id }},
             'name': {{ name }},
             'latitude': {{ latitude }},
             'longitude': {{ longitude }},

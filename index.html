@@ -89,6 +89,11 @@ layout: compress
     var directory = [
         {% for entry in site.directory %}
 
+        <!-- id -->
+        {% assign parts = entry.id | split: "/" %}
+        {% assign index = parts | size | minus: 2 %}
+        {% assign id = parts[index] | escape_once | jsonify %}
+
         <!-- name -->
         {% assign name = entry.name | strip_html | truncate: 100 | escape_once | jsonify %}
 
@@ -135,6 +140,7 @@ layout: compress
 
         <!-- output -->
         {
+            'id': {{ id }},
             'name': {{ name }},
             'latitude': {{ latitude }},
             'longitude': {{ longitude }},

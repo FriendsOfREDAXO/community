@@ -90,6 +90,7 @@ layout: compress
         {% for entry in site.directory %}
 
         <!-- id -->
+        <!-- split path to user folder and select id from second to last part -->
         {% assign parts = entry.id | split: "/" %}
         {% assign index = parts | size | minus: 2 %}
         {% assign id = parts[index] | escape_once | jsonify %}

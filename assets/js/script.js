@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var markers = L.markerClusterGroup({
             showCoverageOnHover: false,
-            maxClusterRadius: 40
+            maxClusterRadius: 40,
+            spiderfyDistanceMultiplier: 3
         });
 
         for (var i = 0, max = directory.length; i < max; i++) {

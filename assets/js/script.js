@@ -91,7 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // generate map
     var map = L.map('map', {
         layers: [tiles, markers],
-        minZoom: 2
+        minZoom: 2,
+        preferCanvas: true,
+        maxBounds: [[75, -175], [-60, 200]], // fit world, provide extra space around new zealand (lng 200 instead of 180)
+        maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
     });
 
     // fit bounds to map

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var markers = L.markerClusterGroup({
             showCoverageOnHover: false,
             maxClusterRadius: 40,
-            spiderfyDistanceMultiplier: 3
+            spiderfyDistanceMultiplier: 2
         });
 
         for (var i = 0, max = directory.length; i < max; i++) {
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         layers: [tiles, markers],
         minZoom: 2,
         preferCanvas: true,
-        maxBounds: [[75, -175], [-60, 200]], // fit world, provide extra space around new zealand (lng 200 instead of 180)
+        maxBounds: [[82, -180], [-70, 200]], // fit world, provide extra space around new zealand (lng 200 instead of 180)
         maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
     });
 

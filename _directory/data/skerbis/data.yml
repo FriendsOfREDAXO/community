@@ -6,13 +6,13 @@ name: Thomas Skerbis
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 51.450433
-longitude: 6.626648
+latitude: 51.45046414
+longitude: 6.62660623
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hi, i'm Thomas, co-founder and managing director of KLXM Crossmedia, REDAXO developer since version 3.2. Today i'm the lead of some FOR AddOns and involved in the documentation."
+bio: "Hi, I'm Thomas, co-founder and managing director of KLXM Crossmedia, REDAXO developer since version 3.2. Today i'm the lead of some FOR AddOns and involved in the documentation."
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)

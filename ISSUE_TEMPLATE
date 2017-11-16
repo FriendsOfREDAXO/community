@@ -1,11 +1,11 @@
 Add or update your maps entry? → Please fill out the required fields below.
 Your issue relates to another topic? → Please clear this text field and enter your text.
 
-* name:
+* nick/name:
 * latitude:
 * longitude:
-* bio:
-* image:
+* personal bio:
+* personal image:
 * links:
 
 See `_directory/.data.example.yml` for detailed instructions!

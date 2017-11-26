@@ -66,8 +66,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 maxWidth: 450
             }).setContent(content);
 
+            // add user ID
+            // this helps us to determine popups
+            popup.userID = directory[i].id;
+
             // init marker
-            L.marker([directory[i].latitude, directory[i].longitude]).bindPopup(popup).addTo(markers);
+            var marker = L.marker([directory[i].latitude, directory[i].longitude], {
+                alt: directory[i].name
+            }).bindPopup(popup);
+
+            // add user ID
+            // this helps us to determine markers
+            marker.userID = directory[i].id;
+
+            // add to markers
+            marker.addTo(markers);
         }
     }
 
@@ -98,12 +111,20 @@ document.addEventListener("DOMContentLoaded", function () {
         maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
     });
 
-    // fit bounds to map
+    // save reference to markers
+    // this makes it easier for us to determine marker layers
+    map.markers = markers;
+
+    // fit bounds to map so all markers are visible
     map.fitBounds(markers.getBounds(), {
         padding: [70, 70]
     });
 
-    // handle popover
+    // set map ready
+    // this helps us to hold back actions triggered by events
+    map.ready = true;
+
+    // handle info popover
     var popover = document.getElementById('popover');
     var popoverOpen = document.getElementById('popover-open');
     var popoverClose = document.getElementById('popover-close');

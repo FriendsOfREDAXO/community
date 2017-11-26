@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         layers: [tiles, markers],
         minZoom: 2,
         preferCanvas: true,
-        maxBounds: [[82, -180], [-70, 200]], // fit world, provide extra space around new zealand (lng 200 instead of 180)
+        maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
         maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
     });
 

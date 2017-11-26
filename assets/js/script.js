@@ -144,9 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // show popover on first visit
+    // show popover on first visit (if URL does not contain hash)
     var supportsLS = window.localStorage && localStorage.getItem;
-    if (supportsLS && !localStorage.getItem('isReturningVisitor')) {
+    var hasHash = window.location.hash.length > 0;
+    if (supportsLS && !hasHash && !localStorage.getItem('isReturningVisitor')) {
         localStorage.setItem('isReturningVisitor', true);
         popover.classList.add('popover--active');
     }

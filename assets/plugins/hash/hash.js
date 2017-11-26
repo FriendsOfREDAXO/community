@@ -35,7 +35,8 @@ L.Map.include({
     _onPopupOpen: function (e) {
         var userID = e.popup.userID;
         if (userID) {
-            var targetMarker = this._getMarker(userID);
+            var targetEntry = this._getUserEntry(userID);
+            var targetMarker = targetEntry ? this._getMarker(targetEntry.id) : false;
             if (targetMarker) {
 
                 // set marker active
@@ -43,6 +44,9 @@ L.Map.include({
 
                 // set user hash
                 this._setUserHash(userID);
+
+                // update document title
+                document.title = targetEntry.name + ' @ ' + this._documentTitle;
             }
         }
     },
@@ -65,6 +69,9 @@ L.Map.include({
                     // add marker to cluster
                     this.markers.addLayer(targetMarker);
                 }
+
+                // reset document title
+                document.title = this._documentTitle;
 
                 // clear hash and set new location hash
                 this._clearHash();
@@ -222,6 +229,9 @@ L.Map.include({
 
 L.Map.addInitHook(function () {
     this.whenReady(function () {
+
+        // save current document title
+        this._documentTitle = document.title;
 
         // bind event handler for hashchange to window
         L.DomEvent.on(window, 'hashchange', this._onHashChange, this);

@@ -108,15 +108,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var popoverOpen = document.getElementById('popover-open');
     var popoverClose = document.getElementById('popover-close');
 
-    popoverOpen.addEventListener("click", function () {
+    popoverOpen.addEventListener('click', function () {
         popover.classList.toggle('popover--active');
     });
 
-    popoverClose.addEventListener("click", function () {
+    popoverClose.addEventListener('click', function () {
         popover.classList.toggle('popover--active');
     });
 
-    document.addEventListener("keydown", function (e) {
+    L.DomEvent.on(document, 'keydown', function (e) {
         // ESC
         if (e.which == 27) {
             popover.classList.remove('popover--active');

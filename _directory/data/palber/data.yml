@@ -17,7 +17,7 @@ bio: "Heyho, I'm working with Redaxo since 2011. With my agency kreatif.it we ma
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (like 'https://www.gravatar.com/avatar/{HASH}')
 # should be square and about 200-300 px size!
-image: palber.jpg
+image: palber.png
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.

@@ -22,10 +22,12 @@ Btw: what data? 👇
 
 Have a look at the example file [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/master/_directory/.data.example.yml). Aside from dummy data it contains a lot of __helpful comments__ on how to structure your data!
 
-For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your name so that you can find it later. Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com).  
+For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your name so that you can find it later and get a cool URL for it! (just like [Jan](https://friendsofredaxo.github.io/community/#dergel) has one). Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com or your GitHub profile picture).  
 
 If you're not sure, take a look at existing user folders to see how to do it. And no worries, the data is always save, you cannot do anything wrong! 
 
 ## What data should I provide?
 
 The map requires your name or nickname and your geo position. Everything else is optional. Of course we'd all love to read more about you and maybe see your picture! But it’s completely up to you whether to provide it or not!
+
+❤️

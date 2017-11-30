@@ -215,7 +215,7 @@ L.Map.include({
 
         // set hash to current location
         window.history.replaceState(null, '', '#' + [
-            zoom,
+            L.Util.formatNum(zoom),
             L.Util.formatNum(center.lat),
             L.Util.formatNum(center.lng)
         ].join(','));

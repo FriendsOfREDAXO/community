@@ -108,7 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
         minZoom: 2,
         preferCanvas: true,
         maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
-        maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
+        maxBoundsViscosity: 1.0, // don’t drag map outside the bounds
+        zoomSnap: 0.2
     });
 
     // save reference to markers

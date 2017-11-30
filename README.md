@@ -6,6 +6,8 @@ A map filled with people being involved in [REDAXO](https://redaxo.org) CMS. Hos
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/community/assets/community_02.png)
 
+The screenshot above shows what user entries look like. You’ll even get your own URL for your entry, which is awesome! Look, this is a [link to Markus](https://friendsofredaxo.github.io/community/#staabm).
+
 ## How to add and manage your entry?
 
 You can add your marker to the map and manage your data by yourself. Learn about [3 ways how to manage your entry](https://github.com/FriendsOfREDAXO/community/tree/master/_directory)! 🚀

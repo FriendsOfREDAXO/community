@@ -117,7 +117,7 @@ L.Map.include({
         if (targetMarker) {
 
             // center map around target marker, use medium zoom
-            this.setView([targetEntry.latitude, targetEntry.longitude], 6, {
+            this.setView([targetEntry.latitude, targetEntry.longitude], 7, {
                 animate: false
             });
 

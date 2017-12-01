@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var markers = L.markerClusterGroup({
             showCoverageOnHover: false,
-            maxClusterRadius: 40,
+            maxClusterRadius: 30,
             spiderfyDistanceMultiplier: 2
         });
 

@@ -283,7 +283,11 @@ abbr[title] {
 /* marker cluster styles */
 
 .marker-cluster {
-  color: rgba(#fff, 0.8);
+  color: rgba(#fff, 0.9);
+
+  div {
+    font-size: 14px;
+  }
 }
 
 .marker-cluster-small,

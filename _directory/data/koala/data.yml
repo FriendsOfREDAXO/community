@@ -23,9 +23,7 @@ image: https://avatars3.githubusercontent.com/u/330686?s=200
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
-#links:
-#- https://johndoe.me
+links:
 - https://github.com/Koala
-#- https://twitter.com/johndoe
 
 ---

@@ -14,8 +14,16 @@ To set up the website on your local machine, the following steps are required:
 2. Install __Bundler__ if not yet available
 
         $ gem install bundler
+        
+3. Install the necessary libraries if not yet available
+        
+        $ apt install build-essential patch ruby-dev libffi-dev zlib1g-dev liblzma-dev
+        
+4. Install __Bundles__ if not yet available
 
-3. __Start Jekyll__
+        $ bundle install
+
+5. __Start Jekyll__
 
         $ bundle exec jekyll serve
 

@@ -14,7 +14,7 @@ longitude: 6.902198
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hello, I’m Andreas, working as a Frontenddeveloper and use Redaxo since version 3.2"
+bio: "Hallo, I’m Andreas, arbeite als Frontend-Developer und benutze Redaxo seit der Version 3.2"
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
@@ -25,7 +25,7 @@ image: johndoe.jpg
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-- https://www.otte.net
+- http://www.otte.net
 - https://github.com/otti242
 
 ---

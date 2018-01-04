@@ -264,7 +264,7 @@ abbr[title] {
 /* leaflet styles */
 
 .leaflet-bar {
-  border: 2px solid rgba(#fff, 0.5);
+  border: 2px solid rgba(#fff, 0.5) !important;
   -webkit-box-shadow: none;
   box-shadow: none;
 }

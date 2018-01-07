@@ -3,7 +3,7 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" prefix="og: http://ogp.me/ns#">
 
 <head>
     <meta charset="utf-8">
@@ -12,15 +12,19 @@ layout: compress
 
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta name="keywords" content="redaxo,community,cms,people,map,github,leaflet">
+    <meta name="author" content="Friends Of REDAXO">
 
+    <!-- styles -->
     <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/leaflet.markercluster/dist/MarkerCluster.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/leaflet.markercluster/dist/MarkerCluster.Default.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
+    <!-- urls -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 
+    <!-- icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/icons/apple-touch-icon.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/icons/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/icons/favicon-16x16.png' | relative_url }}">
@@ -28,13 +32,43 @@ layout: compress
     <link rel="mask-icon" href="{{ '/icons/safari-pinned-tab.svg' | relative_url }}" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- open graph -->
+    <meta property="og:site_name" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+    <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ '/icons/redaxo-community.png' | absolute_url }}">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@REDAXO">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+    <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta name="twitter:image" content="{{ '/icons/redaxo-community.png' | absolute_url }}">
+    <meta name="twitter:image:alt" content="Screenshot of community map">
+
+    <!-- JSON LD -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}",
+            "publisher": "Friends Of REDAXO",
+            "url": "{{ page.url | absolute_url }}",
+            "description": "{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}",
+            "image": "{{ '/icons/redaxo-community.png' | absolute_url }}"
+        }
+    ]
+    </script>
+
+    <!-- scripts -->
     <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/leaflet.markercluster/dist/leaflet.markercluster.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/leaflet.edgebuffer/src/leaflet.edgebuffer.js' | relative_url }}"></script>
     <script src="{{ '/assets/plugins/hash/hash.js' | relative_url }}"></script>
-
-    <!-- inject SEO stuff -->
-    {% seo %}
 </head>
 
 <body>

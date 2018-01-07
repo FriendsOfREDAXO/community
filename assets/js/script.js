@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var markers = L.markerClusterGroup({
             showCoverageOnHover: false,
-            maxClusterRadius: 40,
+            maxClusterRadius: 30,
             spiderfyDistanceMultiplier: 2
         });
 
@@ -108,7 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
         minZoom: 2,
         preferCanvas: true,
         maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
-        maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
+        maxBoundsViscosity: 1.0, // don’t drag map outside the bounds
+        zoomSnap: 0.2
     });
 
     // save reference to markers
@@ -144,9 +145,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // show popover on first visit
+    // show popover on first visit (if URL does not contain hash)
     var supportsLS = window.localStorage && localStorage.getItem;
-    if (supportsLS && !localStorage.getItem('isReturningVisitor')) {
+    var hasHash = window.location.hash.length > 0;
+    if (supportsLS && !hasHash && !localStorage.getItem('isReturningVisitor')) {
         localStorage.setItem('isReturningVisitor', true);
         popover.classList.add('popover--active');
     }

@@ -18,12 +18,12 @@ bio: "Seit 2000 Webseiten-Einzelkämpfer in einer Bonner Werbeagentur. Mit Redax
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: hz.jpg
+image: hz.png
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-# - https://johndoe.me
 - https://github.com/erraiva
-# - https://twitter.com/johndoe
+
+---

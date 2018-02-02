@@ -2,29 +2,29 @@
 # name (required)
 # may be your real name or your nick; not your company name.
 # teams: feel free to add multiple entries for each of your members!
-name: David Bruchmann
+name: Sven Kaemper
 
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: -6.9299135
-longitude: 107.6084941
+latitude: 49.188949
+longitude: 8.094435
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Als Webdeveloper erstellen wir AddOns und Templates für REDAXO und andere Systeme, Erfahrung im Update alter Versionen haben wir ebenfalls. EN: As webdevelopers we create AddOns and templates for REDAXO and other systems, we've also experience updating old versions."
+bio: "Freiberuflicher UX Designer und Informationsarchitekt. Seit 2007 ist REDAXO das CMS meiner Wahl für kleinere (und größere) Projekte."
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: https://avatars1.githubusercontent.com/u/999146?s=200
+image: https://www.gravatar.com/avatar/27efc8111cd54f557c764cabb45daf71?s=200
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-- https://barlians.com
-- https://github.com/DavidBruchmann
-- https://www.xing.com/profile/David_Bruchmann
+- https://svenkaemper.de
+- https://twitter.com/svenkaemper
+- https://bagelkaemper.de
 ---

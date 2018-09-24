@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         var link = directory[i]['links'][j];
                         var linkText = link.replace(/(http:\/\/|https:\/\/)/i, '');
                         content += '' +
-                                '<li class="user__links-listitem"><a href="' + link + '">' + linkText + '</a></li>';
+                            '<li class="user__links-listitem"><a href="' + link + '" target="_blank">' + linkText + '</a></li>';
                     }
                 }
 

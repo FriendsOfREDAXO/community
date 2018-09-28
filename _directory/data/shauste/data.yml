@@ -1,12 +1,8 @@
 ---
 name: Sven Haustein
-latitude: 49.99474
-longitude: 8.27798
-bio: "Frontend designer & developer – based in Mainz, Germany. Using REDAXO since more than 10 years in many projects."
-
-# image or gravatar
-# provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
-# should be square and about 200-300 px size!
+latitude: 50.110899
+longitude: 8.751765
+bio: "Frontend designer & developer – based in region of Rhine Main, Germany. Using REDAXO since more than 10 years in many projects."
 image: shauste.jpg
 links:
 - https://svenhaustein.de

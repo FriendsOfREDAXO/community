@@ -2,14 +2,14 @@
 # https://jekyllrb.com/docs/configuration/
 
 theme: minima
-repository: FriendsOfREDAXO/community
+repository: SUSTech-Application/SUSTech-Alumni-Map
 plugins: []
-timezone: Europe/Berlin
+timezone: Asia/Shanghai
 
 # SEO
 # https://github.com/jekyll/jekyll-seo-tag
-title: REDAXO Community World Map
-description: A map filled with people being involved in REDAXO CMS. Hosted at GitHub, which allows for everyone to add their map entries. Join us!
+title: SUSTech Alumni Map
+description: A map filled with SUSTech alumni over the world. Hosted at GitHub, which allows for everyone to add their map entries. Join us!
 
 # Assets
 # https://jekyllrb.com/docs/assets/

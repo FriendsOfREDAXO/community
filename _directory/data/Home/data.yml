@@ -8,11 +8,11 @@ name: Home
 # you may use services like openstreetmap.org to find out your geo location
 latitude: 22.593969
 longitude: 113.99894
- 
+
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "SUSTech"
+bio: "Southern University of Science and Technology"
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)

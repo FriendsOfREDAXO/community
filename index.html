@@ -12,8 +12,8 @@ layout: compress
 
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-    <meta name="keywords" content="redaxo,community,cms,people,map,github,leaflet">
-    <meta name="author" content="Friends Of REDAXO">
+    <meta name="keywords" content="community,cms,people,map,github,leaflet">
+    <meta name="author" content="SUSTech-Application">
 
     <!-- styles -->
     <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url }}">
@@ -38,16 +38,16 @@ layout: compress
     <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:image" content="{{ '/icons/redaxo-community.png' | absolute_url }}">
+    <meta property="og:image" content="{{ '/icons/SUSTech-Alumni-Map.png' | absolute_url }}">
     <meta property="og:locale" content="de_DE">
 
     <!-- twitter -->
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@REDAXO">
     <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
     <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-    <meta name="twitter:image" content="{{ '/icons/redaxo-community.png' | absolute_url }}">
-    <meta name="twitter:image:alt" content="Screenshot of community map">
+    <meta name="twitter:image" content="{{ '/icons/SUSTech-Alumni-Map.png' | absolute_url }}">
+    <meta name="twitter:image:alt" content="Screenshot of community map"> -->
 
     <!-- JSON LD -->
     <script type="application/ld+json">
@@ -59,7 +59,7 @@ layout: compress
             "publisher": "Friends Of REDAXO",
             "url": "{{ page.url | absolute_url }}",
             "description": "{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}",
-            "image": "{{ '/icons/redaxo-community.png' | absolute_url }}"
+            "image": "{{ '/icons/SUSTech-Alumni-Map.png' | absolute_url }}"
         }
     ]
     </script>
@@ -171,10 +171,10 @@ layout: compress
 
     <!-- info banner at bottom on site, click toggles popover -->
     <a class="infobanner" id="popover-open">
-        <div class="infobanner__redaxo">
+        <!-- <div class="infobanner__redaxo">
             <img class="infobanner__logo" src="{{ '/assets/images/redaxo.svg' | relative_url }}" alt="REDAXO">
             <span>Community <span class="hide-xs">World</span> Map</span>
-        </div>
+        </div> -->
         <div class="infobanner__join">
             <span class="infobanner__heart">♥</span>
             <span>Join!</span>
@@ -188,15 +188,15 @@ layout: compress
         <div class="popover__body">
 
             <h1 class="popover__title">
-                <img class="redaxo-logo" src="{{ '/assets/images/redaxo-cms.svg' | relative_url }}" alt="REDAXO"><br>
-                Community World Map
+                <img class="redaxo-logo" src="{{ '/assets/images/SUSTech.png' | relative_url }}" alt="REDAXO"><br>
+                SUSTech Alumni Map
             </h1>
 
-            <p>Any of the <strong>{{ itemsCount }}</strong> location markers on this map represents someone who’s involved in <a href="https://redaxo.org" target="_blank" rel="noopener noreferrer">REDAXO</a>, which we the community believe is one of the finest CMS around.&nbsp;✌️</p>
-            <p>The project is hosted at <a href="https://github.com/FriendsOfREDAXO/community" target="_blank" rel="noopener noreferrer">GitHub</a>, which allows for everyone to <strong>add and manage their map entries by themselves</strong>! This is pretty cool. If you like to join the map, just follow the link and find all information:</p>
+            <p>Any of the <strong>{{ itemsCount }}</strong> location markers on this map represents an alumnus or alumna who’s willing to share his or her experience in application, which might help SUSTech students in the future.</p>
+            <p>The project is hosted at <a href="https://github.com/SUSTech-Application/SUSTech-Alumni-Map" target="_blank" rel="noopener noreferrer">GitHub</a>, which allows for everyone to <strong>add and manage their map entries by themselves</strong>! This is pretty cool. If you like to join the map, just follow the link and find all information:</p>
 
             <div class="calltoaction">
-                <p>👉 <a href="https://github.com/FriendsOfREDAXO/community/tree/master/_directory" target="_blank" rel="noopener noreferrer">Learn how to manage your marker!</a></p>
+                <p>👉 <a href="https://github.com/SUSTech-Application/SUSTech-Alumni-Map/tree/master/_directory" target="_blank" rel="noopener noreferrer">Learn how to manage your marker!</a></p>
             </div>
 
             <div class="legals">

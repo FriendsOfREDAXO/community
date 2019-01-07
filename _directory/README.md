@@ -16,7 +16,7 @@ Second best option: if you’re not familiar with forking and pull requests, jus
 
 ## 3. Contact us
 
-Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you do not feel comfortable to open an issue containing your data, just send it to us. __Email:__ _friendsof [at] redaxo.org_
+Worst option, but no worries, we’d love to help! If you don’t have a GitHub account at all or you do not feel comfortable to open an issue containing your data, just send it to us. __Email:__ _11510706 [at] mail.sustc.edu.cn_
 
 Btw: what data? 👇
 
@@ -26,7 +26,7 @@ Have a look at the example file [`.data.example.yml`](https://github.com/Friends
 
 For your entry, add a new folder inside of `_directory/data`. It is best to name the folder after your name so that you can find it later and get a cool URL for it! (just like [Jan](https://friendsofredaxo.github.io/community/#dergel) has one). Add a `data.yml` which contains your data according to the example file. Also add an image to the folder, if you don’t want to refer to an external image (like gravatar.com or your GitHub profile picture).  
 
-If you're not sure, take a look at existing user folders to see how to do it. And no worries, the data is always save, you cannot do anything wrong! 
+If you're not sure, take a look at existing user folders to see how to do it. And no worries, the data is always save, you cannot do anything wrong!
 
 ## What data should I provide?
 

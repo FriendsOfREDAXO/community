@@ -7,8 +7,8 @@ name: 张诗奇
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 1.29
-longitude: 103.78
+latitude: 1.2951
+longitude: 103.7739
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.

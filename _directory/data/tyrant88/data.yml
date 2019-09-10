@@ -6,13 +6,13 @@ name: Norbert Micheel
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 50.10782
-longitude: 8.66717
+latitude: 50.1120265
+longitude: 8.7006561
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hi, after 10 years in a marketing agency, I joined YAKAMARA to make a living and to have some fellow developers. In my spare time I braught the former search addOn to REDAXO Version 5 as a FOR addOn named 'search it'. I am REDAXO user since version 3.3 and still got a hang for email marketing."
+bio: "Hi, after 1 year intermezzo with YAKAMARA I returned to »Laut und Schoen« and my old hood in east end. Here I develop websites and OXID online shops and things in beetween. My second interest is email marketing. In my spare time I braught the former search addOn to REDAXO Version 5 as a FOR addOn named 'search it'. I am REDAXO user since version 3.3."
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (like 'https://www.gravatar.com/avatar/{HASH}')

@@ -13,7 +13,8 @@ layout: compress
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta name="keywords" content="redaxo,community,cms,people,map,github,leaflet">
-    <meta name="author" content="Friends Of REDAXO">
+    <meta name="author" content="Friends Of REDAXO"> 
+    <meta name="robots" content="index, follow">
 
     <!-- styles -->
     <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url }}">
@@ -23,6 +24,9 @@ layout: compress
 
     <!-- urls -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    
+    <!-- Prefetch external CDN-Domain -->
+    <link rel="dns-prefetch" href="//cartodb-basemaps-b.global.ssl.fastly.net">
 
     <!-- icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/icons/apple-touch-icon.png' | relative_url }}">

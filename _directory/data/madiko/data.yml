@@ -13,7 +13,7 @@ longitude: 9.174320
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "REDAXO rockt! Frisch gegründet baute ich im Juli 2009 mein erstes Internet-Portal für madiko - damals noch mit REX4. Ich schätze die Community und das, was wir gemeinsam aus dem System machen. Nächster Schritt: Ein Multi-Domain-Portal für meine Initiative EnjoyWork. Ich freue mich drauf! :-)"
+bio: "REDAXO rockt! Frisch gegründet baute ich im Juli 2009 mein 1. Web-Portal für madiko - damals noch mit REX4. Ich schätze die Community und das, was wir gemeinsam aus dem System machen. Aktuelle Herausforderung: EnjoyWork (Online)Marktplatz inkl. Community. Ich freue mich auf das, was entsteht! :-)"
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
@@ -24,7 +24,7 @@ image: madiko_fk.jpg
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
-- http://www.madiko.com
+- https://www.madiko.com
 - http://github.madiko.com
 - https://twitter.com/madiko
 - http://youtube.madiko.com

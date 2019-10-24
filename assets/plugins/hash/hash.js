@@ -117,7 +117,7 @@ L.Map.include({
         if (targetMarker) {
 
             // center map around target marker, use medium zoom
-            this.setView([targetEntry.latitude, targetEntry.longitude], 6, {
+            this.setView([targetEntry.latitude, targetEntry.longitude], 7, {
                 animate: false
             });
 
@@ -215,7 +215,7 @@ L.Map.include({
 
         // set hash to current location
         window.history.replaceState(null, '', '#' + [
-            zoom,
+            L.Util.formatNum(zoom),
             L.Util.formatNum(center.lat),
             L.Util.formatNum(center.lng)
         ].join(','));

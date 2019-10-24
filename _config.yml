@@ -3,7 +3,7 @@
 
 theme: minima
 repository: FriendsOfREDAXO/community
-plugins: ['jekyll-seo-tag']
+plugins: []
 timezone: Europe/Berlin
 
 # SEO

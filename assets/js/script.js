@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var markers = L.markerClusterGroup({
             showCoverageOnHover: false,
-            maxClusterRadius: 40,
+            maxClusterRadius: 30,
             spiderfyDistanceMultiplier: 2
         });
 
@@ -47,8 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (directory[i]['links'][j]) {
                         var link = directory[i]['links'][j];
                         var linkText = link.replace(/(http:\/\/|https:\/\/)/i, '');
-                        content += '' +
-                                '<li class="user__links-listitem"><a href="' + link + '">' + linkText + '</a></li>';
+                        content += "" + '<li class="user__links-listitem"><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + linkText + "</a></li>";
                     }
                 }
 
@@ -108,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
         minZoom: 2,
         preferCanvas: true,
         maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
-        maxBoundsViscosity: 1.0 // don’t drag map outside the bounds
+        maxBoundsViscosity: 1.0, // don’t drag map outside the bounds
+        zoomSnap: 0.2
     });
 
     // save reference to markers

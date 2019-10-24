@@ -264,7 +264,7 @@ abbr[title] {
 /* leaflet styles */
 
 .leaflet-bar {
-  border: 2px solid rgba(#fff, 0.5);
+  border: 2px solid rgba(#fff, 0.5) !important;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -283,7 +283,11 @@ abbr[title] {
 /* marker cluster styles */
 
 .marker-cluster {
-  color: rgba(#fff, 0.8);
+  color: rgba(#fff, 0.9);
+
+  div {
+    font-size: 14px;
+  }
 }
 
 .marker-cluster-small,

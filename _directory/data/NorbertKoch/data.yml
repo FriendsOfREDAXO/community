@@ -1,0 +1,23 @@
+---
+# name (required)
+# may be your real name or your nick
+name: Norbert Koch
+
+# geo location (required)
+# provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
+# you may use services like openstreetmap.org to find out your geo location
+latitude: 47.875154
+longitude: 11.470724
+
+# bio
+# describe yourself, your involvement in the project and the community or whatever is relevant for you.
+# should be 300 chars at maximum. no markup or line breaks!
+bio: "Systemadministrator bei Huber Präzisionstechnik GmbH in Geretsried"
+
+# links
+# one or more links to your website, your github profile, twitter, facebook et al.
+# 4 links, tops!
+links:
+- https://www.huber-gmbh.de
+- http://www.huber-gmbh.org
+---

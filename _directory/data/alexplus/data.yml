@@ -1,11 +1,12 @@
 ---
 name: Alexander Walther
-latitude: 49.162068
-longitude: 9.229243
-bio: "alex+ Informationsdesign. Schreibt Issues und Dokus rund ums REDAXO CMS und dessen Addons ;)"
+latitude: 49.004020
+longitude: 8.386880
+bio: "REDAXO-Entwickler seit über 10 Jahren und seit 2020 Teil von MARKETING NACH PLAN in Karlsruhe. Kümmert sich mit um die REDAXO-Doku, FriendsOfREDAXO, Slack-Support und die Addons Feeds, YCom, YForm und Search it!"
 image: https://www.gravatar.com/avatar/f7cf1b444916b70a31efdda731a78c39?s=200
 links:
 - https://alexplus.de
+- https://marketing-nach-plan.de
 - https://github.com/alexplusde
 
 ---

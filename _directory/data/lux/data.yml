@@ -7,23 +7,22 @@ name: Felix Lux
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 50.8021728
-longitude: 8.7667933
+latitude: 20.318395
+longitude: 63.812564
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hi, ich benutze REDAXO für fast alle meine Webseiten."
+bio: "Ich bin begeisterter Redaxo-Nutzer und nitze das CMS für fast alle meiner großen und kleinen Projekte. Meine erfahrung der letzten Jahre: es gibt kaum etwas, das Redaxo nicht kann!"
 
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: johndoe.jpg
+image: lux.jpg
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.
 # 4 links, tops!
 links:
 - https://luxus-media.de
-
 ---

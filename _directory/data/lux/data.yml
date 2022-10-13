@@ -7,8 +7,8 @@ name: Felix Lux
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 20.318395
-longitude: 63.812564
+latitude: 63.812564 
+longitude: 20.318395
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.

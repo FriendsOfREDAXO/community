@@ -30,6 +30,7 @@ exclude:
 - LICENSE
 - README.md
 - SETUP.md
+- vendor
 
 # Compress HTML in Jekyll
 # http://jch.penibelst.de

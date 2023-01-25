@@ -1,12 +1,14 @@
 ---
 name: Alexander Walther
-latitude: 49.004020
-longitude: 8.386880
-bio: "REDAXO-Entwickler seit über 10 Jahren und seit 2020 Teil von MARKETING NACH PLAN in Karlsruhe. Kümmert sich mit um die REDAXO-Doku, FriendsOfREDAXO, Slack-Support und die Addons Feeds, YCom, YForm und Search it!"
+latitude: 49.13631342020926 
+longitude: 9.216501713743023
+bio: "REDAXO-Entwickler seit über 2008. Entwickler des YForm Spamschutz-Addons, Speed Up! und weiterer REDAXO-Addons."
 image: https://www.gravatar.com/avatar/f7cf1b444916b70a31efdda731a78c39?s=200
 links:
 - https://alexplus.de
-- https://marketing-nach-plan.de
+- https://github.com/alxndr-w
 - https://github.com/alexplusde
+- https://github.com/alexplusde/media_manager_responsive/
+- https://github.com/alexplusde/speed_up/
 
 ---

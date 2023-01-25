@@ -6,13 +6,13 @@ name: Thomas Rotzek
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 49.104510
-longitude: 9.489522
+latitude: 49.124097524786194 
+longitude: 9.652413402574572
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
 # should be 300 chars at maximum. no markup or line breaks!
-bio: "Hi, I'm Thomas and redaxo is my only cms since 2006."
+bio: "Seit 2006 mein einziges CMS für weit über 300 Internetseiten und Projekte."
 
 # image or gravatar
 # provide image file from current folder (like ‘johndoe.jpg’) or gravatar url (generated via https://3v4l.org/OXG7H)

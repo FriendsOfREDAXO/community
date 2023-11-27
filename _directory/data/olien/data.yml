@@ -6,8 +6,8 @@ name: Oliver Kreischer
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 51.399
-longitude: 7.190
+latitude: 51.36440105944344
+longitude: 7.13858446968292
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
@@ -25,5 +25,5 @@ image: https://avatars1.githubusercontent.com/u/330516?s=300&v=4
 links:
 - https://github.com/olien
 - https://github.com/FriendsOfREDAXO
-- https://redaxo.org
-- https://concedra.de
+- https://getaweb.de
+- https://kreischer.de

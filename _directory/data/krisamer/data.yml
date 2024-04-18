@@ -18,7 +18,7 @@ bio: "Hey, I’m Bruno, living in Vaihingen/Enz running my own company. I use RE
 # image or gravatar
 # provide image file from current folder (like 'johndoe.jpg') or gravatar url (generated via https://3v4l.org/OXG7H)
 # should be square and about 200-300 px size!
-image: https://avatars.githubusercontent.com/u/24945200?v=4
+image: https://avatars.githubusercontent.com/u/24945200?s=200&v=4
 
 # links
 # one or more links to your website, your github profile, twitter, facebook et al.

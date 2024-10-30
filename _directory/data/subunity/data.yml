@@ -6,8 +6,8 @@ name: Ralph Zumkeller
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)
 # you may use services like openstreetmap.org to find out your geo location
-latitude: 50.1075487
-longitude: 8.6675080
+latitude: 50.110297
+longitude: 8.679386
 
 # bio
 # describe yourself, your involvement in the project and the community or whatever is relevant for you.
@@ -24,6 +24,6 @@ image: https://avatars0.githubusercontent.com/u/4094576?s=460&v=4
 # 4 links, tops!
 links:
 - https://github.com/subunity
-- http://www.yakamara.de
+- https://www.yakamara.de
 
 ---

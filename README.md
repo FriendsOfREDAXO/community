@@ -25,8 +25,16 @@ No big deal: GitHub allows to generate static websites out of repositories. They
 
 We’d recommend you to download the repo as zip file instead and make it run on your local machine first (see [SETUP.md](https://github.com/SUSTech-Application/SUSTech-Alumni-Map/blob/master/SETUP.md) for instructions).
 
-In case you struggle, we’d love to help: 11510706 AT mail.sustc.edu.cn.
+In case you struggle, we’d love to help: [jimzhouzzy@gmail.com](jimzhouzzy@gmail.com).
 
 ## How to run the map on my local machine?
 
 See [SETUP.md](https://github.com/SUSTech-Application/SUSTech-Alumni-Map/blob/master/SETUP.md) for instructions.
+
+## 🛠️ Maintainers
+
+<div>
+  <a href="https://github.com/jimzhouzzy">
+    <img src="https://github.com/jimzhouzzy.png?s=460" width="100" alt="jimzhouzzy" style="border-radius: 50%;">
+  </a>
+</div>

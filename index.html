@@ -23,6 +23,9 @@ layout: compress
 
     <!-- urls -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    
+    <!-- Prefetch external CDN-Domain -->
+    <link rel="dns-prefetch" href="//cartodb-basemaps-b.global.ssl.fastly.net">
 
     <!-- icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/icons/apple-touch-icon.png' | relative_url }}">
@@ -85,7 +88,8 @@ layout: compress
         <!-- split path to user folder and select id from second to last part -->
         {% assign parts = entry.id | split: "/" %}
         {% assign index = parts | size | minus: 2 %}
-        {% assign id = parts[index] | slugify | jsonify %}
+        {% assign idRaw = parts[index] %}
+        {% assign id = idRaw | slugify | jsonify %}
 
         <!-- name -->
         {% assign name = entry.name | strip_html | truncate: 100 | escape_once | jsonify %}
@@ -141,6 +145,9 @@ layout: compress
         <!-- links -->
         {% assign links = entry.links | jsonify | escape_once | replace: "&quot;", '"' %}
 
+        <!-- last modified -->
+        {% assign lastModified = site.data.last-modified[idRaw] | default: 0 %}
+
         <!-- increment counter -->
         {% assign itemsCount = itemsCount | plus: 1 %}
 
@@ -152,7 +159,8 @@ layout: compress
             'longitude': {{ longitude }},
             'bio': {{ bio }},
             'image': {{ image }},
-            'links': {{ links }}
+            'links': {{ links }},
+            'lastModified': {{ lastModified }},
         }{% unless forloop.last == true %},{% endunless %}
         {% endfor %}
     ];

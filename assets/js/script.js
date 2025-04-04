@@ -83,6 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Disable attribution prefix 
+    L.Control.Attribution.mergeOptions({
+        prefix: false
+    });
+    
     // set map attributes
     if (USEOSM) {
         // OSM maps (unlimited)

@@ -67,18 +67,20 @@ layout: compress
     ]
     </script>
 
-    <!-- Disable attribution prefix BEFORE initializing the map -->
-    <script>
-        L.Control.Attribution.mergeOptions({
-            prefix: false
-        });
-    </script>
 
     <!-- scripts -->
     <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/leaflet.markercluster/dist/leaflet.markercluster.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/leaflet.edgebuffer/src/leaflet.edgebuffer.js' | relative_url }}"></script>
     <script src="{{ '/assets/plugins/hash/hash.js' | relative_url }}"></script>
+    
+    
+    <!-- Disable attribution prefix BEFORE initializing the map -->
+    <script>
+        L.Control.Attribution.mergeOptions({
+            prefix: false
+        });
+    </script>
 
 
     <!-- init directory data and items counter -->

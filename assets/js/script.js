@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         zoomSnap: 0.2,
         scrollWheelZoom: false,
         smoothWheelZoom: true,
-        smoothSensitivity: 1,
+        smoothSensitivity: 5,
     });
 
     // save reference to markers

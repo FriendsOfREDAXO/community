@@ -67,6 +67,14 @@ layout: compress
     ]
     </script>
 
+    <!-- Disable attribution prefix BEFORE initializing the map -->
+    <script>
+        // Remove "Leaflet" + Ukrainian flag globally
+        L.Control.Attribution.mergeOptions({
+            prefix: false
+        });
+    </script>
+
     <!-- scripts -->
     <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/leaflet.markercluster/dist/leaflet.markercluster.js' | relative_url }}"></script>

@@ -51,9 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         padding: [70, 70]
     });
 
-    // Set map ready
-    map.ready = true;
-
     function updateMarkers() {
         markers.clearLayers(); // Clear existing markers
 
@@ -183,4 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('isReturningVisitor', true);
         popover.classList.add('popover--active');
     }
+
+    // Set map ready
+    map.ready = true;
 });

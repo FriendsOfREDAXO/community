@@ -13,6 +13,47 @@ document.addEventListener("DOMContentLoaded", function () {
         spiderfyDistanceMultiplier: 2
     });
 
+    // Use custom marker icons
+    L.Icon.Default.prototype.options.iconUrl = '../../../images/leaflet-icons/marker-icon.png';
+    L.Icon.Default.prototype.options.iconRetinaUrl = '../../../images/leaflet-icons/marker-icon-2x.png';
+
+    // Set map attributes
+    if (USEOSM) {
+        // OSM maps (unlimited)
+        var mapAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+        var mapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var tiles = L.tileLayer(mapUrl, { attribution: mapAttribution });
+    } else {
+        // Carto maps (limited to 75.000 requests)
+        var mapAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>';
+        var mapUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/{style}/{z}/{x}/{y}@2x.png';
+        var tiles = L.tileLayer(mapUrl, { style: 'rastertiles/voyager_labels_under', attribution: mapAttribution });
+    }
+
+    // Generate map
+    var map = L.map('map', {
+        layers: [tiles, markers],
+        minZoom: 2,
+        preferCanvas: true,
+        maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
+        maxBoundsViscosity: 1.0, // don’t drag map outside the bounds
+        zoomSnap: 0.2,
+        scrollWheelZoom: false,
+        smoothWheelZoom: true,
+        smoothSensitivity: 5,
+    });
+
+    // Save reference to markers
+    map.markers = markers;
+
+    // Fit bounds to map so all markers are visible
+    map.fitBounds(markers.getBounds(), {
+        padding: [70, 70]
+    });
+
+    // Set map ready
+    map.ready = true;
+
     function updateMarkers() {
         markers.clearLayers(); // Clear existing markers
 
@@ -114,47 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
     L.Control.Attribution.mergeOptions({
         prefix: false
     });
-
-    // Set map attributes
-    if (USEOSM) {
-        // OSM maps (unlimited)
-        var mapAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-        var mapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        var tiles = L.tileLayer(mapUrl, { attribution: mapAttribution });
-    } else {
-        // Carto maps (limited to 75.000 requests)
-        var mapAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>';
-        var mapUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/{style}/{z}/{x}/{y}@2x.png';
-        var tiles = L.tileLayer(mapUrl, { style: 'rastertiles/voyager_labels_under', attribution: mapAttribution });
-    }
-
-    // Use custom marker icons
-    L.Icon.Default.prototype.options.iconUrl = '../../../images/leaflet-icons/marker-icon.png';
-    L.Icon.Default.prototype.options.iconRetinaUrl = '../../../images/leaflet-icons/marker-icon-2x.png';
-
-    // Generate map
-    var map = L.map('map', {
-        layers: [tiles, markers],
-        minZoom: 2,
-        preferCanvas: true,
-        maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
-        maxBoundsViscosity: 1.0, // don’t drag map outside the bounds
-        zoomSnap: 0.2,
-        scrollWheelZoom: false,
-        smoothWheelZoom: true,
-        smoothSensitivity: 5,
-    });
-
-    // Save reference to markers
-    map.markers = markers;
-
-    // Fit bounds to map so all markers are visible
-    map.fitBounds(markers.getBounds(), {
-        padding: [70, 70]
-    });
-
-    // Set map ready
-    map.ready = true;
 
     // handle info popover
     var popover = document.getElementById('popover');

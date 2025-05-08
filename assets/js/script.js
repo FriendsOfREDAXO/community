@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Default year range
     var currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year
     var yearRange = { min: 12, max: currentYear };
-    console.log(directory);
 
     function updateMarkers() {
         if (directory.length > 0) {
@@ -19,9 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             for (var i = 0, max = directory.length; i < max; i++) {
                 // check if user is in range
-                console.log(directory[i].grade);
-                console.log(yearRange.min);
-                console.log(yearRange.max);
                 if (directory[i].grade < yearRange.min || directory[i].grade > yearRange.max) {
                     continue;
                 }

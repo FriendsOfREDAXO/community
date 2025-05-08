@@ -1,88 +1,105 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     var USEOSM = false; // use unlimited OSM maps (in case carto maps runs above limits)
+    var markers = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        maxClusterRadius: 30,
+        spiderfyDistanceMultiplier: 2
+    });
+    
+    // Default year range
+    var currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year
+    var yearRange = { min: 12, max: currentYear };
 
+    function updateMarkers() {
+        if (directory.length > 0) {
+            // remove all markers
+            markers.clearLayers();
 
-    // generate markers
-    if (directory.length > 0) {
+            for (var i = 0, max = directory.length; i < max; i++) {
+                // check if user is in range
+                if (directory[i].grade < yearRange.min || directory[i].grade > yearRange.max) {
+                    continue;
+                }
 
-        var markers = L.markerClusterGroup({
-            showCoverageOnHover: false,
-            maxClusterRadius: 30,
-            spiderfyDistanceMultiplier: 2
-        });
+                // set popup content
+                var content = '' +
+                    '<div class="user">';
 
-        for (var i = 0, max = directory.length; i < max; i++) {
-
-            // set popup content
-            var content = '' +
-                '<div class="user">';
-
-            if (directory[i].image) {
-                content += '' +
-                    '<div class="user__image">' +
-                        '<img class="user__image-src" src="' + directory[i].image + '" alt="">' +
-                    '</div>';
-            }
-
-            content += '' +
-                    '<div class="user__data">';
-
-            if (directory[i].name) {
-                content += '' +
-                        '<h2 class="user__name">' + directory[i].name + '</h2>';
-            }
-
-            if (directory[i].bio) {
-                content += '' +
-                        '<p class="user__bio">' + directory[i].bio + '</p>';
-            }
-
-            if (directory[i].links) {
-                content += '' +
-                        '<div class="user__links">' +
-                            '<ul class="user__links-list">';
-
-                for (var j = 0; j < 4; j++) {
-                    if (directory[i]['links'][j]) {
-                        var link = directory[i]['links'][j];
-                        var linkText = link.replace(/(http:\/\/|https:\/\/)/i, '');
-                        content += "" + '<li class="user__links-listitem"><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + linkText + "</a></li>";
-                    }
+                if (directory[i].image) {
+                    content += '' +
+                        '<div class="user__image">' +
+                            '<img class="user__image-src" src="' + directory[i].image + '" alt="">' +
+                        '</div>';
                 }
 
                 content += '' +
-                            '</ul>' +
-                        '</div>';
+                        '<div class="user__data">';
+
+                if (directory[i].name) {
+                    content += '' +
+                            '<h2 class="user__name">' + directory[i].name + '</h2>';
+                }
+
+                if (directory[i].bio) {
+                    content += '' +
+                            '<p class="user__bio">' + directory[i].bio + '</p>';
+                }
+
+                if (directory[i].links) {
+                    content += '' +
+                            '<div class="user__links">' +
+                                '<ul class="user__links-list">';
+
+                    for (var j = 0; j < 4; j++) {
+                        if (directory[i]['links'][j]) {
+                            var link = directory[i]['links'][j];
+                            var linkText = link.replace(/(http:\/\/|https:\/\/)/i, '');
+                            content += "" + '<li class="user__links-listitem"><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + linkText + "</a></li>";
+                        }
+                    }
+
+                    content += '' +
+                                '</ul>' +
+                            '</div>';
+                }
+
+                content += '' +
+                        '</div>' +
+                    '</div>';
+
+                // init popup
+                var popup = L.popup({
+                    maxWidth: 450
+                }).setContent(content);
+
+                // add user ID
+                // this helps us to determine popups
+                popup.userID = directory[i].id;
+
+                // init marker
+                var marker = L.marker([directory[i].latitude, directory[i].longitude], {
+                    alt: directory[i].name
+                }).bindPopup(popup);
+
+                // add user ID
+                // this helps us to determine markers
+                marker.userID = directory[i].id;
+
+                // add to markers
+                marker.addTo(markers);
             }
-
-            content += '' +
-                    '</div>' +
-                '</div>';
-
-            // init popup
-            var popup = L.popup({
-                maxWidth: 450
-            }).setContent(content);
-
-            // add user ID
-            // this helps us to determine popups
-            popup.userID = directory[i].id;
-
-            // init marker
-            var marker = L.marker([directory[i].latitude, directory[i].longitude], {
-                alt: directory[i].name
-            }).bindPopup(popup);
-
-            // add user ID
-            // this helps us to determine markers
-            marker.userID = directory[i].id;
-
-            // add to markers
-            marker.addTo(markers);
         }
     }
 
+    // Initialize markers
+    updateMarkers();
+
+    // Disable attribution prefix 
+    L.Control.Attribution.mergeOptions({
+        prefix: false
+    });
+    
     // set map attributes
     if (USEOSM) {
         // OSM maps (unlimited)
@@ -108,7 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
         preferCanvas: true,
         maxBounds: [[82, -200], [-70, 200]], // fit world, provide extra space to left and right (lng 200 instead of 180)
         maxBoundsViscosity: 1.0, // don’t drag map outside the bounds
-        zoomSnap: 0.2
+        zoomSnap: 0.2,
+        scrollWheelZoom: false,
+        smoothWheelZoom: true,
+        smoothSensitivity: 5,
     });
 
     // save reference to markers
@@ -116,9 +136,74 @@ document.addEventListener("DOMContentLoaded", function () {
     map.markers = markers;
 
     // fit bounds to map so all markers are visible
-    map.fitBounds(markers.getBounds(), {
-        padding: [70, 70]
+    if (markers.getLayers().length > 0) {
+        map.fitBounds(markers.getBounds(), { padding: [70, 70] });
+    } else {
+        console.warn("No markers available to fit bounds.");
+    }
+
+    // Create a custom control for the slider
+    var SliderControl = L.Control.extend({
+        options: {
+            position: 'topright' // Position of the slider on the map
+        },
+
+        onAdd: function () {
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+            container.style.backgroundColor = 'white';
+            container.style.padding = '10px';
+            container.style.borderRadius = '5px';
+            container.style.boxShadow = '0 0 5px rgba(0,0,0,0.4)';
+            container.style.width = '300px';
+
+            // Add dual-range slider elements
+            container.innerHTML = `
+                <label for="year-range">Year Range:</label>
+                <div class="slider-container">
+                    <input type="range" id="year-range-min" min="12" max="${currentYear}" value="12">
+                    <input type="range" id="year-range-max" min="12" max="${currentYear}" value="${currentYear}">
+                    <div class="slider-track"></div>
+                </div>
+                <span id="year-range-display">2012 - 20${currentYear}</span>
+            `;
+
+            // Prevent map interactions when interacting with the slider
+            L.DomEvent.disableClickPropagation(container);
+
+            // Add event listeners for the sliders
+            var yearRangeMin = container.querySelector('#year-range-min');
+            var yearRangeMax = container.querySelector('#year-range-max');
+            var yearRangeDisplay = container.querySelector('#year-range-display');
+            var sliderTrack = container.querySelector('.slider-track');
+
+            function updateYearRange() {
+                var min = Math.min(parseInt(yearRangeMin.value), parseInt(yearRangeMax.value));
+                var max = Math.max(parseInt(yearRangeMin.value), parseInt(yearRangeMax.value));
+                yearRange.min = min;
+                yearRange.max = max;
+                yearRangeDisplay.textContent = "20" + min + " - 20" + max;
+
+                // Update slider track style
+                var minPercent = ((min - 12) / (currentYear - 12)) * 100;
+                var maxPercent = ((max - 12) / (currentYear - 12)) * 100;
+                sliderTrack.style.left = minPercent + "%";
+                sliderTrack.style.right = (100 - maxPercent) + "%";
+
+                updateMarkers(); // Update markers based on the new range
+            }
+
+            yearRangeMin.addEventListener("input", updateYearRange);
+            yearRangeMax.addEventListener("input", updateYearRange);
+
+            // Initialize slider track
+            updateYearRange();
+
+            return container;
+        }
     });
+
+    // Add the slider control to the map
+    map.addControl(new SliderControl());
 
     // set map ready
     // this helps us to hold back actions triggered by events

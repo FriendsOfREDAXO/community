@@ -1,38 +1,40 @@
-# REDAXO Community World Map
+# SUSTech Alumni Map
 
-A map filled with people being involved in [REDAXO](https://redaxo.org) CMS. Hosted at GitHub, which allows for everyone to add their map entries. ♥ Join us!
+A map filled with SUSTech alumni who are willing to help current SUSTech students in their application procedure. Hosted at GitHub, which allows for everyone to add their map entries. ♥ Join us!
 
-👉 __https://friendsofredaxo.github.io/community/__
+👉 __https://sustech-application.github.io/SUSTech-Alumni-Map/__
 
-![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/community/assets/community_03.png)
+![Screenshot](icons/SUSTech-Alumni-Map.png)
 
-The screenshot above shows what user entries look like. You’ll even get your own URL for your entry, which is awesome! Look, this is a [link to Markus](https://friendsofredaxo.github.io/community/#staabm).
+The screenshot above shows what user entries look like. You’ll even get your own URL for your entry, which is awesome! Look, this is a [link to SUSTech](https://sustech-application.github.io/SUSTech-Alumni-Map/#home).
 
 ## How to add and manage your entry?
 
-You can add your marker to the map and manage your data by yourself. Learn about [3 ways how to manage your entry](https://github.com/FriendsOfREDAXO/community/tree/master/_directory)! 🚀
+You can add your marker to the map and manage your data by yourself. Learn about [3 ways how to manage your entry](https://github.com/SUSTech-Application/SUSTech-Alumni-Map/tree/master/_directory)! 🚀
 
 ## Who’s the map for?
 
-The map is for any person being involved in REDAXO: developers, users, editors, writers, designers, friends and family et al. It’s about visualizing the REDAXO community. If you use or support REDAXO, the map is for you!
+The map is for any SUSTech student or staff: undergraduates, graduates et al. It’s about visualizing the distribution of SUSTech alumni. If you are one of SUSTech, the map is for you!
 
 ## How does this map work?
 
 No big deal: GitHub allows to generate static websites out of repositories. They make use of [Jekyll](https://jekyllrb.com), a ruby based generator. Jekyll comes with [Liquid](https://shopify.github.io/liquid/) templates, which helped us to inject all our map entries within a JSON at the bottom of the HTML. JavaScript grabs the data and starts a nice [Leaflet](http://leafletjs.com) map with beautiful tiles provided by [CARTO](https://carto.com/location-data-services/basemaps/).  
 —Well, that’s it. ¯\\\_(ツ)_/¯
 
-## Can we use your map for our community?
+## How can I improve this site?
 
-Sure, it’s open source! However, we don’t provide a release or some setup script. We’d recommend you to download the repo as zip file instead and make it run on your local machine first (see [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/master/SETUP.md) for instructions). Afterwards you’ll need to replace some `REDAXO` content with your community content, empty the `_directory/data` folder and start over with a shiny fresh map.
+We’d recommend you to download the repo as zip file instead and make it run on your local machine first (see [SETUP.md](https://github.com/SUSTech-Application/SUSTech-Alumni-Map/blob/master/SETUP.md) for instructions).
 
-In case you struggle, we’d love to help! 🙋‍♂️  
-Also if your map is live we’d be grateful to receive a quick note from you: _friendsof [at] redaxo.org_. Thanks!
+In case you struggle, we’d love to help: [jimzhouzzy@gmail.com](jimzhouzzy@gmail.com).
 
 ## How to run the map on my local machine?
 
-See [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/master/SETUP.md) for instructions.
+See [SETUP.md](https://github.com/SUSTech-Application/SUSTech-Alumni-Map/blob/master/SETUP.md) for instructions.
 
-## What else?
+## 🛠️ Maintainers
 
-You should join our Slack chat. It’s full of nice REDAXO people! ✌️  
-Provide your email to receive an invitation: https://redaxo.org/slack/
+<div>
+  <a href="https://github.com/jimzhouzzy">
+    <img src="https://github.com/jimzhouzzy.png?s=460" width="100" alt="jimzhouzzy" style="border-radius: 50%;">
+  </a>
+</div>

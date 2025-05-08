@@ -136,9 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
     map.markers = markers;
 
     // fit bounds to map so all markers are visible
-    map.fitBounds(markers.getBounds(), {
-        padding: [70, 70]
-    });
+    if (markers.getLayers().length > 0) {
+        map.fitBounds(markers.getBounds(), { padding: [70, 70] });
+    } else {
+        console.warn("No markers available to fit bounds.");
+    }
 
         // Create a custom control for the slider
         var SliderControl = L.Control.extend({

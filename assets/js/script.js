@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Default year range
     var currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year
     var yearRange = { min: 15, max: currentYear };
+    console.log(directory);
 
     function updateMarkers() {
         if (directory.length > 0) {

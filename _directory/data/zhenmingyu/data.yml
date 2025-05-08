@@ -2,6 +2,7 @@
 # name (required)
 # may be your real name or your nick
 name: 余振铭
+grade: 14
 
 # geo location (required)
 # provide your favored level of detail by number of digits (like 50.107811 vs 50.11)

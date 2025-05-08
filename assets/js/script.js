@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             for (var i = 0, max = directory.length; i < max; i++) {
                 // check if user is in range
+                console.log(directory[i].grade);
+                console.log(yearRange.min);
+                console.log(yearRange.max);
                 if (directory[i].grade < yearRange.min || directory[i].grade > yearRange.max) {
                     continue;
                 }

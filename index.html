@@ -95,6 +95,9 @@ layout: compress
         <!-- name -->
         {% assign name = entry.name | strip_html | truncate: 100 | escape_once | jsonify %}
 
+        <!-- grade -->
+        {% assign grade = entry.grade | strip_html | truncate: 100 | escape_once | jsonify %}
+
         <!-- latitude -->
         {% assign latitude = entry.latitude | strip_html | escape_once %}
         {% if latitude.size > 0 %}

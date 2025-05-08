@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Default year range
     var currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year
-    var yearRange = { min: 15, max: currentYear };
+    var yearRange = { min: 12, max: currentYear };
     console.log(directory);
 
     function updateMarkers() {
@@ -146,51 +146,67 @@ document.addEventListener("DOMContentLoaded", function () {
         console.warn("No markers available to fit bounds.");
     }
 
-        // Create a custom control for the slider
-        var SliderControl = L.Control.extend({
-            options: {
-                position: 'topright' // Position of the slider on the map
-            },
-    
-            onAdd: function () {
-                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
-                container.style.backgroundColor = 'white';
-                container.style.padding = '10px';
-                container.style.borderRadius = '5px';
-                container.style.boxShadow = '0 0 5px rgba(0,0,0,0.4)';
-    
-                // Add slider elements
-                container.innerHTML = `
-                    <label for="year-range">Year Range:</label>
-                    <input type="range" id="year-range-min" min="12" max="${currentYear}" value="12" style="width: 100%; margin-bottom: 5px;">
-                    <input type="range" id="year-range-max" min="12" max="${currentYear}" value="${currentYear}" style="width: 100%;">
-                    <span id="year-range-display">2012 - 20${currentYear}</span>
-                `;
-    
-                // Prevent map interactions when interacting with the slider
-                L.DomEvent.disableClickPropagation(container);
-    
-                // Add event listeners for the sliders
-                var yearRangeMin = container.querySelector('#year-range-min');
-                var yearRangeMax = container.querySelector('#year-range-max');
-                var yearRangeDisplay = container.querySelector('#year-range-display');
-    
-                function updateYearRange() {
-                    yearRange.min = parseInt(yearRangeMin.value);
-                    yearRange.max = parseInt(yearRangeMax.value);
-                    yearRangeDisplay.textContent = "20" + yearRange.min + " - 20" + yearRange.max;
-                    updateMarkers(); // Update markers based on the new range
-                }
-    
-                yearRangeMin.addEventListener("input", updateYearRange);
-                yearRangeMax.addEventListener("input", updateYearRange);
-    
-                return container;
+    // Create a custom control for the slider
+    var SliderControl = L.Control.extend({
+        options: {
+            position: 'topright' // Position of the slider on the map
+        },
+
+        onAdd: function () {
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+            container.style.backgroundColor = 'white';
+            container.style.padding = '10px';
+            container.style.borderRadius = '5px';
+            container.style.boxShadow = '0 0 5px rgba(0,0,0,0.4)';
+
+            // Add dual-range slider elements
+            container.innerHTML = `
+                <label for="year-range">Year Range:</label>
+                <div class="slider-container">
+                    <input type="range" id="year-range-min" min="12" max="${currentYear}" value="12">
+                    <input type="range" id="year-range-max" min="12" max="${currentYear}" value="${currentYear}">
+                    <div class="slider-track"></div>
+                </div>
+                <span id="year-range-display">2012 - 20${currentYear}</span>
+            `;
+
+            // Prevent map interactions when interacting with the slider
+            L.DomEvent.disableClickPropagation(container);
+
+            // Add event listeners for the sliders
+            var yearRangeMin = container.querySelector('#year-range-min');
+            var yearRangeMax = container.querySelector('#year-range-max');
+            var yearRangeDisplay = container.querySelector('#year-range-display');
+            var sliderTrack = container.querySelector('.slider-track');
+
+            function updateYearRange() {
+                var min = Math.min(parseInt(yearRangeMin.value), parseInt(yearRangeMax.value));
+                var max = Math.max(parseInt(yearRangeMin.value), parseInt(yearRangeMax.value));
+                yearRange.min = min;
+                yearRange.max = max;
+                yearRangeDisplay.textContent = "20" + min + " - 20" + max;
+
+                // Update slider track style
+                var minPercent = ((min - 12) / (currentYear - 12)) * 100;
+                var maxPercent = ((max - 12) / (currentYear - 12)) * 100;
+                sliderTrack.style.left = minPercent + "%";
+                sliderTrack.style.right = (100 - maxPercent) + "%";
+
+                updateMarkers(); // Update markers based on the new range
             }
-        });
-    
-        // Add the slider control to the map
-        map.addControl(new SliderControl());
+
+            yearRangeMin.addEventListener("input", updateYearRange);
+            yearRangeMax.addEventListener("input", updateYearRange);
+
+            // Initialize slider track
+            updateYearRange();
+
+            return container;
+        }
+    });
+
+    // Add the slider control to the map
+    map.addControl(new SliderControl());
 
     // set map ready
     // this helps us to hold back actions triggered by events

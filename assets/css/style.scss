@@ -428,8 +428,8 @@ abbr[title] {
 .slider-container input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 75px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background: #0078d7;
   border-radius: 50%;
   pointer-events: auto;
@@ -438,8 +438,8 @@ abbr[title] {
 }
 
 .slider-container input[type="range"]::-moz-range-thumb {
-  width: 75px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background: #0078d7;
   border-radius: 50%;
   pointer-events: auto;

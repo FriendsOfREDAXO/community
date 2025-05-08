@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             container.style.padding = '10px';
             container.style.borderRadius = '5px';
             container.style.boxShadow = '0 0 5px rgba(0,0,0,0.4)';
+            container.style.width = '300px';
 
             // Add dual-range slider elements
             container.innerHTML = `

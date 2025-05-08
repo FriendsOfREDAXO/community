@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     var USEOSM = false; // use unlimited OSM maps (in case carto maps runs above limits)
-    var markers = L.markerClusterGroup();
+    var markers = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        maxClusterRadius: 30,
+        spiderfyDistanceMultiplier: 2
+    });
     
     // Default year range
     var currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year
-    var yearRange = { min: 12, max: currentYear };
+    var yearRange = { min: 15, max: currentYear };
 
     function updateMarkers() {
         if (directory.length > 0) {
-
-            markers = L.markerClusterGroup({
-                showCoverageOnHover: false,
-                maxClusterRadius: 30,
-                spiderfyDistanceMultiplier: 2
-            });
+            // remove all markers
+            markers.clearLayers();
 
             for (var i = 0, max = directory.length; i < max; i++) {
                 // check if user is in range

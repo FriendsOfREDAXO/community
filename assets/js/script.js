@@ -12,6 +12,86 @@ document.addEventListener("DOMContentLoaded", function () {
         maxClusterRadius: 30,
         spiderfyDistanceMultiplier: 2
     });
+    
+    // generate markers
+    if (directory.length > 0) {
+
+        var markers = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            maxClusterRadius: 30,
+            spiderfyDistanceMultiplier: 2
+        });
+
+        for (var i = 0, max = directory.length; i < max; i++) {
+
+            // set popup content
+            var content = '' +
+                '<div class="user">';
+
+            if (directory[i].image) {
+                content += '' +
+                    '<div class="user__image">' +
+                        '<img class="user__image-src" src="' + directory[i].image + '" alt="">' +
+                    '</div>';
+            }
+
+            content += '' +
+                    '<div class="user__data">';
+
+            if (directory[i].name) {
+                content += '' +
+                        '<h2 class="user__name">' + directory[i].name + '</h2>';
+            }
+
+            if (directory[i].bio) {
+                content += '' +
+                        '<p class="user__bio">' + directory[i].bio + '</p>';
+            }
+
+            if (directory[i].links) {
+                content += '' +
+                        '<div class="user__links">' +
+                            '<ul class="user__links-list">';
+
+                for (var j = 0; j < 4; j++) {
+                    if (directory[i]['links'][j]) {
+                        var link = directory[i]['links'][j];
+                        var linkText = link.replace(/(http:\/\/|https:\/\/)/i, '');
+                        content += "" + '<li class="user__links-listitem"><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + linkText + "</a></li>";
+                    }
+                }
+
+                content += '' +
+                            '</ul>' +
+                        '</div>';
+            }
+
+            content += '' +
+                    '</div>' +
+                '</div>';
+
+            // init popup
+            var popup = L.popup({
+                maxWidth: 450
+            }).setContent(content);
+
+            // add user ID
+            // this helps us to determine popups
+            popup.userID = directory[i].id;
+
+            // init marker
+            var marker = L.marker([directory[i].latitude, directory[i].longitude], {
+                alt: directory[i].name
+            }).bindPopup(popup);
+
+            // add user ID
+            // this helps us to determine markers
+            marker.userID = directory[i].id;
+
+            // add to markers
+            marker.addTo(markers);
+        }
+    }
 
     // Use custom marker icons
     L.Icon.Default.prototype.options.iconUrl = '../../../images/leaflet-icons/marker-icon.png';

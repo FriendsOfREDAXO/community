@@ -1,5 +1,22 @@
 # Setup
 
+## a) Docker 🐳
+
+Falls du kein Ruby installieren möchtest, um die Website lokal laufen zu lassen, bietet sich Docker an.
+
+Zunächst das Image aus dem `Dockerfile` bauen:
+
+    $ docker compose build
+
+Anschließend den Container starten:
+
+    $ docker compose up -d
+
+Im Container wird noch das Entrypoint-Script ausgeführt, das alle notwendigen Pakete installiert — das kann einen Moment dauern, achte ggfls. auf die Logs! —, bevor schließlich Jekyll startet und die Website erreichbar ist unter http://localhost:4000/.
+
+
+## b) Lokales Setup ohne Docker
+
 To set up the website on your local machine, the following steps are required:
 
 1. Install __Ruby >= 2.1__ if not yet available

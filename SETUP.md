@@ -6,11 +6,11 @@ If you don't want to install Ruby to run the website locally, a docker installat
 
 First off, build the image from the `Dockerfile`:
 
-    $ docker-compose build
+    $ docker compose build
 
 After that, start the docker container:
 
-    $ docker-compose up -d
+    $ docker compose up -d
 
 Inside the container, the entrypoint script has to be computed, which installs all necessary packages. This might take a bit; please have an eye on the logs. If everything runs smooth, Jekyll will start and your website is available at http://localhost:4000/.
 

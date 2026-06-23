@@ -10,7 +10,7 @@ The screenshot above shows what user entries look like. You’ll even get your o
 
 ## How to add and manage your entry?
 
-You can add your marker to the map and manage your data by yourself. Learn about [3 ways how to manage your entry](https://github.com/FriendsOfREDAXO/community/tree/master/_directory)! 🚀
+You can add your marker to the map and manage your data by yourself. Learn about [3 ways how to manage your entry](https://github.com/FriendsOfREDAXO/community/tree/main/_directory)! 🚀
 
 ## Who’s the map for?
 
@@ -23,14 +23,14 @@ No big deal: GitHub allows to generate static websites out of repositories. They
 
 ## Can we use your map for our community?
 
-Sure, it’s open source! However, we don’t provide a release or some setup script. We’d recommend you to download the repo as zip file instead and make it run on your local machine first (see [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/master/SETUP.md) for instructions). Afterwards you’ll need to replace some `REDAXO` content with your community content, empty the `_directory/data` folder and start over with a shiny fresh map.
+Sure, it’s open source! However, we don’t provide a release or some setup script. We’d recommend you to download the repo as zip file instead and make it run on your local machine first (see [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/main/SETUP.md) for instructions). Afterwards you’ll need to replace some `REDAXO` content with your community content, empty the `_directory/data` folder and start over with a shiny fresh map.
 
 In case you struggle, we’d love to help! 🙋‍♂️  
 Also if your map is live we’d be grateful to receive a quick note from you: _friendsof [at] redaxo.org_. Thanks!
 
 ## How to run the map on my local machine?
 
-See [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/master/SETUP.md) for instructions.
+See [SETUP.md](https://github.com/FriendsOfREDAXO/community/blob/main/SETUP.md) for instructions.
 
 ## What else?
 

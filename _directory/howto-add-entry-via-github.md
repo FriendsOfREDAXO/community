@@ -24,7 +24,7 @@ Enter the name of your folder followed by a slash (`/`):
 Once you typed the slash, GitHub updates the form. Now you can enter the name of the data file: __`data.yml`__.  
 Also fill in your profile data to the text field below.
 
-👉 We recommend you to open a new browser tab with [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/master/_directory/.data.example.yml), copy its content to your clipboard and paste it into the text field. 
+👉 We recommend you to open a new browser tab with [`.data.example.yml`](https://github.com/FriendsOfREDAXO/community/blob/main/_directory/.data.example.yml), copy its content to your clipboard and paste it into the text field. 
 
 ![Screenshot 5](https://raw.githubusercontent.com/FriendsOfREDAXO/community/assets/howto-github/howto-github_05.png)
 

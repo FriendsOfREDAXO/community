@@ -12,21 +12,20 @@ layout: compress
 
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-    <meta name="keywords" content="redaxo,community,cms,people,map,github,leaflet">
+    <meta name="keywords" content="redaxo,community,cms,people,map,github,maplibre,openfreemap">
     <meta name="author" content="Friends Of REDAXO"> 
     <meta name="robots" content="index, follow">
 
     <!-- styles -->
-    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet.markercluster/dist/MarkerCluster.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet.markercluster/dist/MarkerCluster.Default.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/maplibre-gl/maplibre-gl.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
     <!-- urls -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     
-    <!-- Prefetch external CDN-Domain -->
-    <link rel="dns-prefetch" href="//cartodb-basemaps-b.global.ssl.fastly.net">
+    <!-- Prefetch external tile server (OpenFreeMap) -->
+    <link rel="dns-prefetch" href="//tiles.openfreemap.org">
+    <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
 
     <!-- icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/icons/apple-touch-icon.png' | relative_url }}">
@@ -69,10 +68,7 @@ layout: compress
     </script>
 
     <!-- scripts -->
-    <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
-    <script src="{{ '/assets/vendor/leaflet.markercluster/dist/leaflet.markercluster.js' | relative_url }}"></script>
-    <script src="{{ '/assets/vendor/leaflet.edgebuffer/src/leaflet.edgebuffer.js' | relative_url }}"></script>
-    <script src="{{ '/assets/plugins/hash/hash.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/maplibre-gl/maplibre-gl.js' | relative_url }}"></script>
 
 
     <!-- init directory data and items counter -->
@@ -175,7 +171,7 @@ layout: compress
 <body>
 
     <!-- map container -->
-    <div class="map" id="map"></div>
+    <div class="map" id="map" data-marker-icon="{{ '/assets/images/marker/marker-icon-2x.png' | relative_url }}"></div>
 
 
     <!-- info banner at bottom on site, click toggles popover -->
@@ -197,7 +193,10 @@ layout: compress
         <div class="popover__body">
 
             <h1 class="popover__title">
-                <img class="redaxo-logo" src="{{ '/assets/images/redaxo-cms.svg' | relative_url }}" alt="REDAXO"><br>
+                <picture>
+                    <source srcset="{{ '/assets/images/redaxo-cms-dark.svg' | relative_url }}" media="(prefers-color-scheme: dark)">
+                    <img class="redaxo-logo" src="{{ '/assets/images/redaxo-cms.svg' | relative_url }}" alt="REDAXO">
+                </picture><br>
                 Community World Map
             </h1>
 

@@ -311,8 +311,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         MAP_THEME_RULES.forEach(function (rule) {
             layers.forEach(function (layer) {
-                // apply to matching layers whose type fits the property (e.g. "fill-color" on fill layers)
-                if (matchesLayer(rule[0], layer) && rule[1].indexOf(layer.type + '-') === 0) {
+                // apply to matching layers whose type fits the property
+                // (e.g. "fill-color" on fill layers, "text-color" on symbol layers)
+                var propertyPrefix = layer.type === 'symbol' ? /^(text|icon)-/ : new RegExp('^' + layer.type + '-');
+                if (matchesLayer(rule[0], layer) && propertyPrefix.test(rule[1])) {
                     map.setPaintProperty(layer.id, rule[1], scheme === 'dark' ? rule[3] : rule[2]);
                 }
             });
@@ -325,6 +327,13 @@ document.addEventListener("DOMContentLoaded", function () {
     /* ---------------------------------------------------------------------
      * map
      * ------------------------------------------------------------------ */
+
+    // padding (px) around markers when fitting them into the view,
+    // keeps them clear of the map controls and the info banner on small screens
+    function getFitPadding() {
+        var small = Math.min(mapContainer.clientWidth, mapContainer.clientHeight) < 600;
+        return small ? { top: 60, bottom: 60, left: 20, right: 20 } : 70;
+    }
 
     // initial view: location hash, user hash or bounds of all markers
     var initialView = {};
@@ -342,20 +351,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     else if (dataBounds) {
         initialView.bounds = dataBounds;
-        initialView.fitBoundsOptions = { padding: 70 };
+        initialView.fitBoundsOptions = { padding: getFitPadding() };
+    }
+
+    // min zoom: the full world width fits the viewport, but at most 2
+    // (MapLibre itself keeps the world filling the viewport height and centered horizontally,
+    // so the whole world is visible on wide viewports and all markers fit with the initial view)
+    function getMinZoom() {
+        return Math.min(2, Math.log2(mapContainer.clientWidth / 512));
     }
 
     var map = new maplibregl.Map(Object.assign({
         container: mapContainer,
         style: MAP_STYLE,
-        minZoom: 2,
+        minZoom: getMinZoom(),
         maxZoom: MAX_ZOOM,
-        // don’t drag map outside the world
-        // (not exactly ±180: MapLibre 5.24 throws in its constrain code for full-width bounds)
-        maxBounds: [[-179.9, -70], [179.9, 82]],
+        // single world, no repeated copies: MapLibre prevents dragging it out of the viewport
         renderWorldCopies: false,
         attributionControl: { compact: false }
     }, initialView));
+
+    map.on('resize', function () {
+        map.setMinZoom(getMinZoom());
+    });
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
@@ -516,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 var camera = map.cameraForBounds(bounds, {
-                    padding: 70,
+                    padding: getFitPadding(),
                     maxZoom: MAX_ZOOM
                 });
 
